@@ -94,5 +94,29 @@ sourceNote:
   other: "Every link below goes to an official source. We show the domain so you can check it yourself."
 moreAbout:
   other: "More about"
+heroTagline:
+  other: "Find the official page — fast. Simple steps, then straight to the genuine official pages — every link checked by a human, with the date we checked it."
+footNotGov:
+  other: "This is not a government website. We link to official sources."
+footGuides:
+  other: "Guides"
+footThisSite:
+  other: "This site"
+footPromiseTitle:
+  other: "Our promise"
+footPromiseText:
+  other: "Every official link on this site was opened and checked by a human. The date is always shown. If an official page says something different from us, the official page is right."
+navMovingIn:
+  other: "Moving in"
+navEmergency:
+  other: "Emergency"
+navHealth:
+  other: "Health"
+navMoneyTax:
+  other: "Money & tax"
+navWards:
+  other: "Your ward"
+operatorNote:
+  other: "an independent company, not affiliated with any government body. No ads, no tracking."
 aiTranslated:
   other: "This page was translated from the English original by AI. If anything differs, the English page is correct."

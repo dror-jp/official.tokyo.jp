@@ -93,5 +93,29 @@ sourceNote:
   other: "下のリンクは すべて 役所の本物のページです。ドメイン（住所）も 見えるようにしています。"
 moreAbout:
   other: "くわしく:"
+heroTagline:
+  other: "役所の 正しいページに、いちばん早く。やることを 短いステップで説明して、本物の公式ページに 案内します。リンクは ぜんぶ 人間が確認しています。"
+footNotGov:
+  other: "ここは 役所のサイトでは ありません。役所の 本物のページに 案内します。"
+footGuides:
+  other: "ガイド"
+footThisSite:
+  other: "このサイト"
+footPromiseTitle:
+  other: "私たちの約束"
+footPromiseText:
+  other: "このサイトのリンクは、すべて 人間が開いて 確認しています。確認した日付も 書いてあります。役所のページと ちがうときは、役所のページが 正しいです。"
+navMovingIn:
+  other: "引っこしの手続き"
+navEmergency:
+  other: "緊急のとき"
+navHealth:
+  other: "健康・医療"
+navMoneyTax:
+  other: "お金・税金"
+navWards:
+  other: "あなたの区"
+operatorNote:
+  other: "独立した会社です。政府とは 関係ありません。広告なし・追跡なし。"
 aiTranslated:
   other: "このページは AIが英語から翻訳しました。ちがいがあるときは 英語のページが正しいです。"

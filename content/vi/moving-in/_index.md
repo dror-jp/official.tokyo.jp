@@ -14,9 +14,10 @@ translated: "2026-07-10"
    bạn cũng được cập nhật tại cùng một quầy, trong cùng một lần đến.
    → [Đăng ký cư trú](/vi/moving-in/resident-registration/) ·
    [Đổi địa chỉ trên thẻ zairyū](/vi/moving-in/residence-card/)
-3. **Cùng lần đến đó** — nếu bạn không có bảo hiểm qua công ty, hãy hỏi tại quầy về Bảo
-   hiểm Y tế Quốc dân (国民健康保険 – kokumin kenkō hoken). (Hướng dẫn chi tiết của
-   chúng tôi sẽ có trong giai đoạn tiếp theo.)
+3. **Cùng lần đến đó** — nếu bạn không có bảo hiểm qua công ty, hãy đăng ký
+   [Bảo hiểm Y tế Quốc dân](/vi/health/national-health-insurance/) (国民健康保険) tại
+   cùng văn phòng. Từ 20–59 tuổi và không làm việc cho công ty? Hãy hỏi thêm về
+   [Lương hưu Quốc dân](/vi/money-tax/pension/) — có chế độ miễn giảm nếu thu nhập thấp.
 4. **Vài tuần sau — My Number (マイナンバー) của bạn sẽ được gửi đến qua bưu điện.**
    Không cần đăng ký gì cả; chỉ cần đừng làm mất lá thư.
    → [My Number](/vi/moving-in/my-number/)

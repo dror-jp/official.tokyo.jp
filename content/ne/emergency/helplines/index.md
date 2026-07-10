@@ -23,7 +23,7 @@ official_links:
     url: "https://tabunka.tokyo-tsunagari.or.jp/useful/guide_eng/accident/01.html"
     publisher: "Tokyo Intercultural Portal Site (TIPS)"
     verified: "2026-07-10"
-    note: "११९, #7119, बालबालिकाको आपत्काल (#8000), Himawari र चिकित्सा दोभाषे सेवा समेट्छ।"
+    note: "119, #7119, बालबालिकाको आपत्काल (#8000), Himawari र चिकित्सा दोभाषे सेवा समेट्छ।"
 ---
 
 तपाईंको वडामा पनि विदेशी बासिन्दाहरूका लागि आफ्नै परामर्श डेस्क हुन्छ — ठेगाना, समय र भाषाका लागि [आफ्नो वडाको पृष्ठ](/ne/wards/) हेर्नुहोस्।

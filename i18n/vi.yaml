@@ -96,3 +96,28 @@ moreAbout:
   other: "Xem thêm:"
 aiTranslated:
   other: "Trang này được AI dịch từ bản gốc tiếng Anh. Nếu có khác biệt, bản tiếng Anh là chính xác."
+
+heroTagline:
+  other: "Tìm trang chính thức — nhanh chóng. Các bước đơn giản, dẫn thẳng đến trang chính thức thật — mọi liên kết đều được con người kiểm tra, kèm ngày kiểm tra."
+footNotGov:
+  other: "Đây không phải là trang web của chính phủ. Chúng tôi dẫn bạn đến các nguồn chính thức."
+footGuides:
+  other: "Hướng dẫn"
+footThisSite:
+  other: "Về trang này"
+footPromiseTitle:
+  other: "Cam kết của chúng tôi"
+footPromiseText:
+  other: "Mọi liên kết chính thức trên trang này đều được con người mở ra và kiểm tra, luôn kèm ngày kiểm tra. Nếu trang chính thức nói khác, trang chính thức là đúng."
+navMovingIn:
+  other: "Chuyển đến"
+navEmergency:
+  other: "Khẩn cấp"
+navHealth:
+  other: "Sức khỏe"
+navMoneyTax:
+  other: "Tiền và thuế"
+navWards:
+  other: "Quận của bạn"
+operatorNote:
+  other: "một công ty độc lập, không thuộc bất kỳ cơ quan chính phủ nào. Không quảng cáo, không theo dõi."

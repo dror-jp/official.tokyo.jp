@@ -96,3 +96,28 @@ moreAbout:
   other: "查看详情："
 aiTranslated:
   other: "本页面由 AI 从英文原文翻译。如内容有出入，请以英文页面为准。"
+
+heroTagline:
+  other: "快速找到官方页面。简单的步骤，直达真正的官方页面——每个链接都经过人工核实，并标明核实日期。"
+footNotGov:
+  other: "本网站不是政府网站。我们链接到官方信息源。"
+footGuides:
+  other: "指南"
+footThisSite:
+  other: "关于本站"
+footPromiseTitle:
+  other: "我们的承诺"
+footPromiseText:
+  other: "本站的每一个官方链接都由人工打开核实，并始终标明核实日期。如与官方页面不一致，以官方页面为准。"
+navMovingIn:
+  other: "搬入手续"
+navEmergency:
+  other: "紧急情况"
+navHealth:
+  other: "健康与医疗"
+navMoneyTax:
+  other: "金钱与税务"
+navWards:
+  other: "您的区"
+operatorNote:
+  other: "一家独立公司，与任何政府机构无关。无广告，无跟踪。"

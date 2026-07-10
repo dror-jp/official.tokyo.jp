@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="container">
-  <p class="crumb"><a href="{{ "/" | relURL }}">{{ i18n "backToHome" }}</a> /{{ if .Parent }}{{ if not .Parent.IsHome }} <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> /{{ end }}{{ end }}</p>
+  <p class="crumb"><a href="{{ "/" | relLangURL }}">{{ i18n "backToHome" }}</a> /{{ if .Parent }}{{ if not .Parent.IsHome }} <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> /{{ end }}{{ end }}</p>
   <div class="page-head">
     <h1>{{ .Title }}{{ with .Params.ja_term }} <span class="ja-term">{{ . }}</span>{{ end }}</h1>
     {{ with .Params.summary }}<p class="summary">{{ . }}</p>{{ end }}
