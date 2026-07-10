@@ -9,6 +9,10 @@ disableKinds = ["taxonomy", "term"]
     label = "English"
     contentDir = "content/en"
     weight = 1
+  [languages.ja]
+    label = "やさしい日本語"
+    contentDir = "content/ja"
+    weight = 2
 
 [params]
   tagline = "Find the official page — fast."

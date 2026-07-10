@@ -5,14 +5,21 @@
       <span class="independent">{{ i18n "independentGuide" }}</span>
     </a>
     <div class="ward-picker">
+      {{ if .IsTranslated }}
+        {{ range .Translations }}
+          <a class="lang-switch" href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}">{{ if eq .Language.Lang "ja" }}やさしい日本語{{ else }}English{{ end }}</a>
+        {{ end }}
+      {{ end }}
       <label for="ward-select">{{ i18n "yourWard" }}</label>
       <select id="ward-select" aria-label="{{ i18n "selectYourWard" }}">
         <option value="">{{ i18n "selectYourWard" }}</option>
+        {{ $isJa := eq site.Language.Lang "ja" }}
         {{ range $slug, $w := hugo.Data.wards }}
+          {{ $label := $w.name_en }}{{ if $isJa }}{{ $label = $w.name_local }}{{ end }}
           {{ if ne $w.official_en_url "TODO: verify" }}
-            <option value="{{ $slug }}">{{ $w.name_en }}</option>
+            <option value="{{ $slug }}">{{ $label }}</option>
           {{ else }}
-            <option value="{{ $slug }}" disabled>{{ $w.name_en }} — {{ i18n "comingSoon" }}</option>
+            <option value="{{ $slug }}" disabled>{{ $label }} — {{ i18n "comingSoon" }}</option>
           {{ end }}
         {{ end }}
       </select>

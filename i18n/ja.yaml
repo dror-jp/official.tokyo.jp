@@ -1,0 +1,93 @@
+# やさしい日本語のUI文言。短い文・簡単な言葉・漢字には（よみがな）。
+whatDoYouNeed:
+  other: "何に困っていますか？"
+notGovernment:
+  other: "ここは 役所（やくしょ）のサイトでは ありません。役所の 正しいページに 案内します。"
+whoNeeds:
+  other: "だれに必要？"
+steps:
+  other: "やること"
+whatToBring:
+  other: "持っていくもの"
+whereToGo:
+  other: "どこに行く？"
+officialLinks:
+  other: "役所の 正しいページ"
+lastVerified:
+  other: "最終確認日"
+verifiedOn:
+  other: "確認日"
+selectYourWard:
+  other: "住んでいる区を えらぶ"
+yourWard:
+  other: "あなたの区"
+changeWard:
+  other: "変える"
+wardNotListed:
+  other: "あなたの区のページは 準備中です。区の 公式サイトを 見てください。"
+comingSoon:
+  other: "準備中"
+inYourWard:
+  other: "あなたの区では"
+noWardSelected:
+  other: "上で 区を えらぶと、あなたの区の 窓口（まどぐち）だけ 表示されます。"
+officialSite:
+  other: "区の 公式サイト（英語）"
+foreignDesk:
+  other: "外国人のための 相談窓口（そうだんまどぐち）"
+garbageGuide:
+  other: "ゴミの 分け方ガイド"
+wardOffice:
+  other: "区役所（くやくしょ）"
+openInMaps:
+  other: "地図を 見る（Google Maps）"
+languagesLabel:
+  other: "できる言葉"
+hoursLabel:
+  other: "時間"
+phoneLabel:
+  other: "電話"
+addressLabel:
+  other: "住所"
+movingInPage:
+  other: "引っこしの 手続きページ"
+aboutThisSite:
+  other: "このサイトについて"
+disclaimer:
+  other: "免責（めんせき）とリンクの決まり"
+independentGuide:
+  other: "外国人のための 独立した案内サイト"
+runBy:
+  other: "運営："
+allProcedures:
+  other: "すべての手続き"
+backToHome:
+  other: "ホーム"
+onThisPage:
+  other: "このページの内容"
+commonQuestions:
+  other: "よくある質問"
+whatsNext:
+  other: "次に やること"
+deadlineLabel:
+  other: "期限"
+costLabel:
+  other: "お金"
+placeLabel:
+  other: "場所"
+otherWards:
+  other: "ほかの区"
+proceduresHere:
+  other: "この窓口でする 手続き"
+pickYourWard:
+  other: "住んでいる区を えらんでください"
+missionLine:
+  other: "東京で 生活を始める すべての人に、役所の正しい情報への いちばん近い道を。"
+helpInLanguage:
+  other: "あなたの言葉で 相談できます"
+glossaryTitle:
+  other: "よく見る言葉"
+showAtCounter:
+  other: "窓口で これを 見せてください"
+sourceNote:
+  other: "下のリンクは すべて 役所の本物のページです。ドメイン（住所）も 見えるようにしています。"
