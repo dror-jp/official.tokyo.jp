@@ -41,7 +41,7 @@ translated: "2026-07-10"
 政府页面会变动，办理时间也会改变。如果您发现失效链接或过期信息，请告诉我们——我们会阅读每一条反馈，但无法保证一定回复：
 
 - 在 [GitHub](https://github.com/dror-jp/official.tokyo.jp/issues) 上提交 issue，或
-- 给我们发邮件（邮箱地址即将开通，我们正在设置邮件系统）。
+- 给我们发邮件：[fix@official.tokyo.jp](mailto:fix@official.tokyo.jp)
 
 **我们无法回答个人咨询问题**（例如签证个案、税务情况等）。如需此类咨询，请拨打东京都多语言咨询导航（Tokyo Multilingual Consultation Navi）——**0120-142-142**，免费电话，提供约15种语言服务。为您指引到正确的官方窗口，正是本网站的目的。
 

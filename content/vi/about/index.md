@@ -63,7 +63,7 @@ kết bị hỏng hoặc thông tin đã lỗi thời, xin hãy báo cho chúng 
 báo cáo, dù không thể hứa sẽ phản hồi:
 
 - Tạo một issue trên [GitHub](https://github.com/dror-jp/official.tokyo.jp/issues), hoặc
-- Gửi email cho chúng tôi (địa chỉ sẽ có sớm, khi hệ thống email của chúng tôi được thiết lập xong).
+- Gửi email cho chúng tôi: [fix@official.tokyo.jp](mailto:fix@official.tokyo.jp)
 
 **Chúng tôi không thể trả lời các câu hỏi tư vấn cá nhân** (hồ sơ visa, tình huống thuế,
 v.v.). Với những vấn đề đó, hãy gọi Tokyo Multilingual Consultation Navi —

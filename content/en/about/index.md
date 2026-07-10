@@ -56,7 +56,7 @@ Government pages move and hours change. If you find a broken link or outdated
 information, please tell us — we read every report, though we cannot promise a reply:
 
 - Open an issue on [GitHub](https://github.com/dror-jp/official.tokyo.jp/issues), or
-- Email us (address coming soon, once our mail routing is set up).
+- Email us: [fix@official.tokyo.jp](mailto:fix@official.tokyo.jp)
 
 **We cannot answer personal consultation questions** (visa cases, tax situations, and
 so on). For those, call the Tokyo Multilingual Consultation Navi — **0120-142-142**,

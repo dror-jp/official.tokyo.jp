@@ -52,7 +52,7 @@ last_verified: "2026-07-10"
 情報が古かったりしたら、教えてください。全部読みます（返事は 約束できません）:
 
 - [GitHub](https://github.com/dror-jp/official.tokyo.jp/issues) で知らせる
-- メールで知らせる（アドレスは準備中です）
+- メールで知らせる: [fix@official.tokyo.jp](mailto:fix@official.tokyo.jp)
 
 **個人の相談には 答えられません**（ビザのこと、税金のことなど）。そういうときは
 東京都多言語相談ナビへ — **0120-142-142**（無料・約15の言葉）。正しい窓口に

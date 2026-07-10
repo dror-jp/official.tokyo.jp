@@ -58,7 +58,7 @@ translated: "2026-07-10"
 वाचा गर्न सक्दैनौं:
 
 - [GitHub](https://github.com/dror-jp/official.tokyo.jp/issues) मा एउटा इस्यु खोल्नुहोस्, वा
-- हामीलाई इमेल गर्नुहोस् (ठेगाना चाँडै आउँदै छ, हाम्रो मेल सेटअप भएपछि)।
+- हामीलाई इमेल गर्नुहोस्: [fix@official.tokyo.jp](mailto:fix@official.tokyo.jp)
 
 **हामी व्यक्तिगत परामर्शका प्रश्नहरूको जवाफ दिन सक्दैनौं** (भिसाका मुद्दा, करका
 अवस्था, इत्यादि)। ती कुराका लागि, Tokyo Multilingual Consultation Navi मा फोन गर्नुहोस् —
