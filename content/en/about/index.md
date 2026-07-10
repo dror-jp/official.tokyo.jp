@@ -29,9 +29,23 @@ This site is run by **[DroR Corporation](https://dror.co.jp)** (株式会社DroR
 Japanese company, as a non-commercial public-interest project.
 Editor: **Masaya Nakamori**, CCO.
 
+## Why a company does this for free
+
+Two honest reasons.
+
+**The belief.** Starting a life in a new country is hard enough. The information you
+need actually exists — written by governments, accurate, free — but it is scattered
+across dozens of websites and hardest to find in your first month, exactly when you
+need it most. We don't think anyone should miss a deadline, lose a benefit, or
+hesitate to call an ambulance because of language.
+
+**The honest company answer.** DroR's work is about how information is found and
+trusted in the age of AI. This site is us practicing what we preach: information worth
+trusting is verified by a human, dated, and open. If this site makes you trust how we
+work, that is the only return we get. Nothing here is monetized:
+
 - No advertising, no affiliate links, no tracking.
-- Our ward data is published openly at [/api/wards.json](/api/wards.json) under a
-  CC BY 4.0 license.
+- Our ward data is free for anyone to reuse: [/api/wards.json](/api/wards.json), CC BY 4.0.
 - The whole site is open source: [github.com/dror-jp/official.tokyo.jp](https://github.com/dror-jp/official.tokyo.jp).
 
 ## If something is wrong
