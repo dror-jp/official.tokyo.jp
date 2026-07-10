@@ -21,22 +21,34 @@ $urls = $urls | Where-Object {
     $_ -notmatch 'creativecommons\.org'                   # license boilerplate
 } | Sort-Object -Unique
 
+# Sites that block datacenter IPs (403 from CI runners, fine from residential
+# connections). A 403 from these is a warning, not a failure — but any other
+# error still fails, so we don't go blind to real link rot there.
+$botBlockedHosts = @("www.tepco.co.jp")
+
 Write-Output "Checking $($urls.Count) unique external URLs..."
 $failed = @()
+$warned = @()
 
 foreach ($url in $urls) {
     $ok = $false
+    $status = 0
     foreach ($attempt in 1..2) {
         try {
             $resp = Invoke-WebRequest -Uri $url -UserAgent $ua -Method Get -TimeoutSec 30 -UseBasicParsing -MaximumRedirection 5
             if ($resp.StatusCode -ge 200 -and $resp.StatusCode -lt 400) { $ok = $true; break }
         } catch {
-            if ($attempt -eq 2) { $err = $_.Exception.Message }
-            else { Start-Sleep -Seconds 3 }
+            $err = $_.Exception.Message
+            if ($_.Exception.Response) { $status = [int]$_.Exception.Response.StatusCode }
+            if ($attempt -lt 2) { Start-Sleep -Seconds 3 }
         }
     }
+    $host403 = ([uri]$url).Host
     if ($ok) {
         Write-Output "  OK   $url"
+    } elseif ($status -eq 403 -and $botBlockedHosts -contains $host403) {
+        Write-Output "  WARN $url  (403 from a datacenter IP - known bot-blocker, verify from a residential connection)"
+        $warned += $url
     } else {
         Write-Output "  FAIL $url  ($err)"
         $failed += $url
@@ -44,6 +56,9 @@ foreach ($url in $urls) {
 }
 
 Write-Output ""
+if ($warned.Count -gt 0) {
+    Write-Output "WARNINGS (bot-blocked hosts, check manually): $($warned.Count)"
+}
 if ($failed.Count -gt 0) {
     Write-Output "BROKEN LINKS: $($failed.Count) of $($urls.Count)"
     $failed | ForEach-Object { Write-Output "  - $_" }
