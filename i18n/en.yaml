@@ -92,3 +92,7 @@ showAtCounter:
   other: "Show this at the counter"
 sourceNote:
   other: "Every link below goes to an official source. We show the domain so you can check it yourself."
+moreAbout:
+  other: "More about"
+aiTranslated:
+  other: "This page was translated from the English original by AI. If anything differs, the English page is correct."

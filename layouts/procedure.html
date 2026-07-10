@@ -53,7 +53,7 @@
     <div class="counter-phrase">
       <span class="cp-label">{{ i18n "showAtCounter" }}</span>
       <span class="cp-ja" lang="ja">{{ .ja }}</span>
-      <span class="cp-en">{{ .en }}</span>
+      <span class="cp-en">{{ .translation | default .en }}</span>
     </div>
     {{ end }}
     <div class="ward-prompt" data-ward-prompt>{{ i18n "noWardSelected" }}</div>
@@ -77,7 +77,8 @@
           {{ if $isMovingIn }}{{ with $w.moving_in_page_url }}
           <p><a href="{{ . }}" rel="noopener">{{ i18n "movingInPage" }} <span class="domain-pill">{{ (urls.Parse .).Host }}</span></a></p>
           {{ end }}{{ end }}
-          <p class="small"><a href="{{ printf "/wards/%s/" $slug | relLangURL }}">{{ if eq site.Language.Lang "ja" }}{{ $w.name_local }}のページ →{{ else }}More about {{ $w.name_en }} →{{ end }}</a></p>
+          {{ $wname := $w.name_en }}{{ if in (slice "ja" "zh") site.Language.Lang }}{{ $wname = $w.name_local }}{{ end }}
+          <p class="small"><a href="{{ printf "/wards/%s/" $slug | relLangURL }}">{{ i18n "moreAbout" }} {{ $wname }} →</a></p>
         </div>
       {{ end }}
     {{ end }}

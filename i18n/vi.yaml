@@ -1,0 +1,98 @@
+# UI strings. All human-visible template text lives here so that
+# adding a language (やさしい日本語, 中文, Tiếng Việt, नेपाली) never touches templates.
+whatDoYouNeed:
+  other: "Bạn cần làm gì?"
+notGovernment:
+  other: "Chúng tôi không phải là cơ quan chính phủ. Chúng tôi đưa bạn đến nguồn thông tin chính thức, nhanh nhất có thể."
+whoNeeds:
+  other: "Ai cần thủ tục này"
+steps:
+  other: "Các bước thực hiện"
+whatToBring:
+  other: "Cần mang theo gì"
+whereToGo:
+  other: "Đến đâu"
+officialLinks:
+  other: "Liên kết chính thức"
+lastVerified:
+  other: "Lần kiểm tra gần nhất"
+verifiedOn:
+  other: "đã kiểm tra"
+selectYourWard:
+  other: "Chọn quận của bạn"
+yourWard:
+  other: "Quận của bạn"
+changeWard:
+  other: "Đổi"
+wardNotListed:
+  other: "Các trang thông tin quận đang được bổ sung dần. Nếu quận của bạn chưa có, hãy dùng trang web chính thức của văn phòng quận đó."
+comingSoon:
+  other: "Sắp có"
+inYourWard:
+  other: "Trong quận của bạn"
+noWardSelected:
+  other: "Chọn quận của bạn ở trên để xem thông tin quầy tư vấn tại địa phương."
+officialSite:
+  other: "Trang web tiếng Anh chính thức"
+foreignDesk:
+  other: "Quầy tư vấn dành cho người nước ngoài"
+garbageGuide:
+  other: "Hướng dẫn phân loại rác (tiếng Anh)"
+wardOffice:
+  other: "Văn phòng quận"
+openInMaps:
+  other: "Mở bằng Google Maps"
+languagesLabel:
+  other: "Ngôn ngữ"
+hoursLabel:
+  other: "Giờ làm việc"
+phoneLabel:
+  other: "Điện thoại"
+addressLabel:
+  other: "Địa chỉ"
+movingInPage:
+  other: "Trang thủ tục khi mới chuyển đến"
+aboutThisSite:
+  other: "Về trang web này"
+disclaimer:
+  other: "Tuyên bố miễn trừ trách nhiệm & chính sách liên kết"
+independentGuide:
+  other: "Hướng dẫn độc lập dành cho người nước ngoài"
+runBy:
+  other: "Vận hành bởi"
+allProcedures:
+  other: "Tất cả thủ tục"
+backToHome:
+  other: "Trang chủ"
+onThisPage:
+  other: "Trong trang này"
+commonQuestions:
+  other: "Câu hỏi thường gặp"
+whatsNext:
+  other: "Bước tiếp theo"
+deadlineLabel:
+  other: "Thời hạn"
+costLabel:
+  other: "Chi phí"
+placeLabel:
+  other: "Địa điểm"
+otherWards:
+  other: "Các quận khác"
+proceduresHere:
+  other: "Thủ tục bạn sẽ thực hiện tại văn phòng này"
+pickYourWard:
+  other: "Chọn quận của bạn"
+missionLine:
+  other: "Con đường ngắn nhất đến nguồn thông tin chính thức — dành cho tất cả những ai đang bắt đầu cuộc sống tại Tokyo."
+helpInLanguage:
+  other: "Hỗ trợ bằng ngôn ngữ của bạn"
+glossaryTitle:
+  other: "Những từ bạn sẽ gặp"
+showAtCounter:
+  other: "Đưa câu này cho nhân viên ở quầy"
+sourceNote:
+  other: "Mỗi liên kết dưới đây đều dẫn đến nguồn chính thức. Chúng tôi hiển thị tên miền để bạn có thể tự kiểm tra."
+moreAbout:
+  other: "Xem thêm:"
+aiTranslated:
+  other: "Trang này được AI dịch từ bản gốc tiếng Anh. Nếu có khác biệt, bản tiếng Anh là chính xác."

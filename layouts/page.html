@@ -12,11 +12,11 @@
   {{ .Content }}
 
   {{ if .Params.show_glossary }}
-  {{ $isJa := eq site.Language.Lang "ja" }}
+  {{ $lang := site.Language.Lang }}
   <dl class="glossary">
     {{ range hugo.Data.glossary.terms }}
       <dt><span class="g-ja">{{ .ja_word }}</span> <span class="g-romaji">{{ .romaji }}</span></dt>
-      <dd>{{ if $isJa }}{{ .ja }}{{ else }}{{ .en }}{{ end }}</dd>
+      <dd>{{ index . $lang | default .en }}</dd>
     {{ end }}
   </dl>
   {{ end }}

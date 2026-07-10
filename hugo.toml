@@ -13,8 +13,23 @@ disableKinds = ["taxonomy", "term"]
     label = "やさしい日本語"
     contentDir = "content/ja"
     weight = 2
+  [languages.zh]
+    label = "简体中文"
+    contentDir = "content/zh"
+    weight = 3
+  [languages.vi]
+    label = "Tiếng Việt"
+    contentDir = "content/vi"
+    weight = 4
+  [languages.ne]
+    label = "नेपाली"
+    contentDir = "content/ne"
+    weight = 5
 
 [params]
+  # Tier 2 languages: AI-translated from the English source of truth,
+  # disclosed on every page. Tier 1 (en, ja) is human-verified.
+  tier2 = ["zh", "vi", "ne"]
   tagline = "Find the official page — fast."
   notGovernment = "This is not a government website. We link to official sources."
   operatorName = "DroR Corporation"

@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $w := index hugo.Data.wards .Params.ward }}
-{{ $isJa := eq site.Language.Lang "ja" }}
+{{ $isJa := in (slice "ja" "zh") site.Language.Lang }}
 <div class="container">
   <p class="crumb"><a href="{{ "/" | relLangURL }}">{{ i18n "backToHome" }}</a> / <a href="{{ "/wards/" | relLangURL }}">{{ i18n "yourWard" }}</a> /</p>
   <div class="page-head">

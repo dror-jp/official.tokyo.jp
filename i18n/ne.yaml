@@ -1,0 +1,98 @@
+# UI strings. All human-visible template text lives here so that
+# adding a language (やさしい日本語, 中文, Tiếng Việt, नेपाली) never touches templates.
+whatDoYouNeed:
+  other: "तपाईंलाई के चाहिन्छ?"
+notGovernment:
+  other: "हामी सरकार होइनौं। हामी तपाईंलाई छिटो आधिकारिक स्रोतसम्म पुर्‍याउँछौं।"
+whoNeeds:
+  other: "यो कसलाई चाहिन्छ"
+steps:
+  other: "चरणहरू"
+whatToBring:
+  other: "के लिएर जाने"
+whereToGo:
+  other: "कहाँ जाने"
+officialLinks:
+  other: "आधिकारिक लिङ्कहरू"
+lastVerified:
+  other: "पछिल्लो पटक जाँचिएको"
+verifiedOn:
+  other: "जाँचिएको"
+selectYourWard:
+  other: "आफ्नो वडा छान्नुहोस्"
+yourWard:
+  other: "तपाईंको वडा"
+changeWard:
+  other: "बदल्नुहोस्"
+wardNotListed:
+  other: "वडा पृष्ठहरू थपिँदै छन्। तपाईंको वडा अझै सूचीमा छैन भने, आफ्नो वडा कार्यालयको आधिकारिक वेबसाइट प्रयोग गर्नुहोस्।"
+comingSoon:
+  other: "चाँडै आउँदै"
+inYourWard:
+  other: "तपाईंको वडामा"
+noWardSelected:
+  other: "आफ्नो स्थानीय काउन्टर हेर्न माथि आफ्नो वडा छान्नुहोस्।"
+officialSite:
+  other: "आधिकारिक अंग्रेजी वेबसाइट"
+foreignDesk:
+  other: "विदेशी बासिन्दाहरूका लागि परामर्श डेस्क"
+garbageGuide:
+  other: "फोहोर छुट्याउने गाइड (अंग्रेजी)"
+wardOffice:
+  other: "वडा कार्यालय"
+openInMaps:
+  other: "Google Maps मा खोल्नुहोस्"
+languagesLabel:
+  other: "भाषाहरू"
+hoursLabel:
+  other: "समय"
+phoneLabel:
+  other: "फोन"
+addressLabel:
+  other: "ठेगाना"
+movingInPage:
+  other: "सर्ने प्रक्रियाको पृष्ठ"
+aboutThisSite:
+  other: "यो साइटको बारेमा"
+disclaimer:
+  other: "अस्वीकरण र लिङ्क नीति"
+independentGuide:
+  other: "विदेशी बासिन्दाहरूका लागि स्वतन्त्र गाइड"
+runBy:
+  other: "सञ्चालक"
+allProcedures:
+  other: "सबै प्रक्रियाहरू"
+backToHome:
+  other: "गृह पृष्ठ"
+onThisPage:
+  other: "यस पृष्ठमा"
+commonQuestions:
+  other: "सामान्य प्रश्नहरू"
+whatsNext:
+  other: "अब के गर्ने"
+deadlineLabel:
+  other: "अन्तिम मिति"
+costLabel:
+  other: "खर्च"
+placeLabel:
+  other: "कहाँ"
+otherWards:
+  other: "अन्य वडाहरू"
+proceduresHere:
+  other: "यो कार्यालयमा तपाईंले गर्ने प्रक्रियाहरू"
+pickYourWard:
+  other: "आफ्नो वडा छान्नुहोस्"
+missionLine:
+  other: "आधिकारिक स्रोतसम्म पुग्ने सबैभन्दा छोटो बाटो — टोकियोमा जीवन सुरु गर्ने सबैका लागि।"
+helpInLanguage:
+  other: "तपाईंको भाषामा सहयोग"
+glossaryTitle:
+  other: "तपाईंले देख्ने शब्दहरू"
+showAtCounter:
+  other: "यो काउन्टरमा देखाउनुहोस्"
+sourceNote:
+  other: "तलका हरेक लिङ्क आधिकारिक स्रोतमा जान्छन्। तपाईं आफैं जाँच्न सकून् भनेर हामी डोमेन देखाउँछौं।"
+moreAbout:
+  other: "थप जानकारी:"
+aiTranslated:
+  other: "यो पृष्ठ AI द्वारा अंग्रेजी मूलबाट अनुवाद गरिएको हो। केही फरक भएमा अंग्रेजी पृष्ठ सही मानिन्छ।"

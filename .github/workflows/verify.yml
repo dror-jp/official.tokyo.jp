@@ -24,9 +24,20 @@ jobs:
 
   check-links:
     runs-on: ubuntu-latest
-    # Link rot is the site's #1 operational risk (see strategy.html).
+    # Link rot is the site's #1 operational risk (see strategy doc).
     steps:
       - uses: actions/checkout@v4
       - name: Verify every published official link
         shell: pwsh
         run: ./scripts/Check-Links.ps1
+
+  check-translations:
+    runs-on: ubuntu-latest
+    # Informational: reports translations older than their EN source.
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Report stale or missing translations
+        shell: pwsh
+        run: ./scripts/Check-Translations.ps1

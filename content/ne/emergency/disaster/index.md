@@ -1,0 +1,30 @@
+---
+title: "प्रकोप"
+ja_term: "防災"
+summary: "भूकम्प, आँधी, भारी वर्षा — चेतावनी कहाँ हेर्ने, र अलर्ट स्तरको अर्थ के हो।"
+last_verified: "2026-07-10"
+translated: "2026-07-10"
+official_links:
+  - label: "Tokyo प्रकोप रोकथाम गृह पृष्ठ"
+    url: "https://www.bousai.metro.tokyo.lg.jp/"
+    publisher: "Tokyo Metropolitan Government"
+    verified: "2026-07-10"
+    note: "स्थानान्तरण जानकारी र प्रकोप अपडेट। भाषा बदल्ने बटन प्रयोग गर्नुहोस् (१५ भाषा)।"
+  - label: "मौसम चेतावनी र सल्लाह"
+    url: "https://www.jma.go.jp/jma/en/menu.html"
+    publisher: "Japan Meteorological Agency (気象庁)"
+    verified: "2026-07-10"
+    note: "आधिकारिक अंग्रेजी चेतावनी: आँधी, भारी वर्षा, भूकम्प, सुनामी।"
+  - label: "अलर्ट स्तर १–५ को व्याख्या"
+    url: "https://tabunka.tokyo-tsunagari.or.jp/english/disaster/howto/alert_levels.html"
+    publisher: "Tokyo Intercultural Portal Site (TIPS)"
+    verified: "2026-07-10"
+    note: "स्तर ३ = वृद्ध र कमजोर मानिसहरू स्थानान्तरण हुने। स्तर ४ = सबैजना स्थानान्तरण हुने।"
+  - label: "Tokyo Bousai — प्रकोप तयारी पुस्तिका (अंग्रेजी PDF)"
+    url: "https://www.bousai.metro.tokyo.lg.jp/1028036/1028051/1029136.html"
+    publisher: "Tokyo Metropolitan Government"
+    verified: "2026-07-10"
+    note: "प्रकोप आउनुअघि पढ्नुहोस्, आएको बेला होइन।"
+---
+
+**आज एउटा कुरा सिक्नुहोस्:** **अलर्ट स्तर ४** (警戒レベル4) मा, प्रभावित क्षेत्रका सबैजना स्थानान्तरण हुनैपर्छ। स्तर ५ को पर्खाइ नगर्नुहोस्।

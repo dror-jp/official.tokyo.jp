@@ -1,0 +1,30 @@
+---
+title: "灾害"
+ja_term: "防災"
+summary: "地震、台风、暴雨——去哪里查看预警信息，以及各预警级别的含义。"
+last_verified: "2026-07-10"
+official_links:
+  - label: "东京都防灾主页"
+    url: "https://www.bousai.metro.tokyo.lg.jp/"
+    publisher: "东京都政府"
+    verified: "2026-07-10"
+    note: "疏散信息与灾害最新动态。请使用语言切换功能（提供15种语言）。"
+  - label: "气象警报与注意事项"
+    url: "https://www.jma.go.jp/jma/en/menu.html"
+    publisher: "日本气象厅（気象庁）"
+    verified: "2026-07-10"
+    note: "官方英文预警：台风、暴雨、地震、海啸。"
+  - label: "预警级别1~5说明"
+    url: "https://tabunka.tokyo-tsunagari.or.jp/english/disaster/howto/alert_levels.html"
+    publisher: "东京都多文化共生门户网站（TIPS）"
+    verified: "2026-07-10"
+    note: "3级 = 老年人及易受灾人群需疏散。4级 = 所有人均需疏散。"
+  - label: "东京防灾——防灾手册（英文PDF）"
+    url: "https://www.bousai.metro.tokyo.lg.jp/1028036/1028051/1029136.html"
+    publisher: "东京都政府"
+    verified: "2026-07-10"
+    note: "请在灾害发生前阅读，而不是发生时才阅读。"
+translated: "2026-07-10"
+---
+
+**今天先记住一件事：** 当发布**警戒レベル4（警戒级别4）**时，受影响区域内的所有人都必须疏散。不要等到5级才行动。

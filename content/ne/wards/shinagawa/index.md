@@ -1,0 +1,8 @@
+---
+title: "Shinagawa"
+ja_term: "品川区"
+layout: "ward"
+ward: "shinagawa"
+summary: "Shinagawa वडाका आधिकारिक लिङ्कहरू, विदेशीहरूका लागि परामर्श डेस्क र फोहोर छुट्याउने गाइड।"
+translated: "2026-07-10"
+---

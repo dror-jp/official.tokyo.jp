@@ -28,7 +28,7 @@
   <section class="block">
     <h2 style="margin-top:28px">{{ i18n "pickYourWard" }}</h2>
     <ul class="ward-chips">
-      {{ $isJa := eq site.Language.Lang "ja" }}
+      {{ $isJa := in (slice "ja" "zh") site.Language.Lang }}
       {{ range $slug, $data := hugo.Data.wards }}
         {{ if $data.last_verified }}
           <li><a href="{{ printf "/wards/%s/" $slug | relLangURL }}">{{ if $isJa }}{{ $data.name_local }}{{ else }}{{ $data.name_en }} <span class="ja">{{ $data.name_local }}</span>{{ end }}</a></li>

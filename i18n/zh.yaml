@@ -1,0 +1,98 @@
+# UI strings. All human-visible template text lives here so that
+# adding a language (やさしい日本語, 中文, Tiếng Việt, नेपाली) never touches templates.
+whatDoYouNeed:
+  other: "您需要什么帮助？"
+notGovernment:
+  other: "我们不是政府机构。我们只是快速地把您带到官方信息源。"
+whoNeeds:
+  other: "适用对象"
+steps:
+  other: "办理步骤"
+whatToBring:
+  other: "需携带材料"
+whereToGo:
+  other: "办理地点"
+officialLinks:
+  other: "官方链接"
+lastVerified:
+  other: "最后核实时间"
+verifiedOn:
+  other: "核实时间"
+selectYourWard:
+  other: "选择您所在的区"
+yourWard:
+  other: "您所在的区"
+changeWard:
+  other: "更改"
+wardNotListed:
+  other: "各区页面正在陆续添加中。如果您所在的区尚未列出，请使用该区役所的官方网站。"
+comingSoon:
+  other: "即将推出"
+inYourWard:
+  other: "您所在区的信息"
+noWardSelected:
+  other: "请在上方选择您所在的区，以查看当地办理窗口信息。"
+officialSite:
+  other: "官方英文网站"
+foreignDesk:
+  other: "外国人咨询窗口"
+garbageGuide:
+  other: "垃圾分类指南（英文）"
+wardOffice:
+  other: "区役所"
+openInMaps:
+  other: "在谷歌地图中打开"
+languagesLabel:
+  other: "可使用语言"
+hoursLabel:
+  other: "办理时间"
+phoneLabel:
+  other: "电话"
+addressLabel:
+  other: "地址"
+movingInPage:
+  other: "迁入手续页面"
+aboutThisSite:
+  other: "关于本网站"
+disclaimer:
+  other: "免责声明与链接政策"
+independentGuide:
+  other: "面向外国居民的独立指南"
+runBy:
+  other: "运营方"
+allProcedures:
+  other: "全部手续"
+backToHome:
+  other: "首页"
+onThisPage:
+  other: "本页内容"
+commonQuestions:
+  other: "常见问题"
+whatsNext:
+  other: "接下来该做什么"
+deadlineLabel:
+  other: "办理期限"
+costLabel:
+  other: "费用"
+placeLabel:
+  other: "办理地点"
+otherWards:
+  other: "其他区"
+proceduresHere:
+  other: "在该窗口可办理的手续"
+pickYourWard:
+  other: "选择您所在的区"
+missionLine:
+  other: "为每一位在东京开始新生活的人，提供通往官方信息源的最短路径。"
+helpInLanguage:
+  other: "以您的语言提供帮助"
+glossaryTitle:
+  other: "您会遇到的词汇"
+showAtCounter:
+  other: "在窗口出示此内容"
+sourceNote:
+  other: "以下每个链接都指向官方信息源。我们会显示域名，方便您自行核实。"
+moreAbout:
+  other: "查看详情："
+aiTranslated:
+  other: "本页面由 AI 从英文原文翻译。如内容有出入，请以英文页面为准。"

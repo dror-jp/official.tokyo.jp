@@ -6,6 +6,9 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   {{ partial "site-header.html" . }}
+  {{ if in site.Params.tier2 site.Language.Lang }}
+  <div class="ai-note"><div class="container">{{ i18n "aiTranslated" }}{{ with .Params.translated }} ({{ . }}){{ end }} — <a href="{{ range .AllTranslations }}{{ if eq .Language.Lang "en" }}{{ .RelPermalink }}{{ end }}{{ end }}">English</a></div></div>
+  {{ end }}
   <main id="main">
     {{ block "main" . }}{{ end }}
   </main>

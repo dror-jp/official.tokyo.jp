@@ -91,3 +91,7 @@ showAtCounter:
   other: "窓口で これを 見せてください"
 sourceNote:
   other: "下のリンクは すべて 役所の本物のページです。ドメイン（住所）も 見えるようにしています。"
+moreAbout:
+  other: "くわしく:"
+aiTranslated:
+  other: "このページは AIが英語から翻訳しました。ちがいがあるときは 英語のページが正しいです。"

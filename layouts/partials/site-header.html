@@ -6,16 +6,17 @@
     </a>
     <div class="ward-picker">
       {{ if .IsTranslated }}
+        {{ $names := dict "en" "English" "ja" "やさしい日本語" "zh" "简体中文" "vi" "Tiếng Việt" "ne" "नेपाली" }}
         {{ range .Translations }}
-          <a class="lang-switch" href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}">{{ if eq .Language.Lang "ja" }}やさしい日本語{{ else }}English{{ end }}</a>
+          <a class="lang-switch" href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}">{{ index $names .Language.Lang | default .Language.Lang }}</a>
         {{ end }}
       {{ end }}
       <label for="ward-select">{{ i18n "yourWard" }}</label>
       <select id="ward-select" aria-label="{{ i18n "selectYourWard" }}">
         <option value="">{{ i18n "selectYourWard" }}</option>
-        {{ $isJa := eq site.Language.Lang "ja" }}
+        {{ $useLocal := in (slice "ja" "zh") site.Language.Lang }}
         {{ range $slug, $w := hugo.Data.wards }}
-          {{ $label := $w.name_en }}{{ if $isJa }}{{ $label = $w.name_local }}{{ end }}
+          {{ $label := $w.name_en }}{{ if $useLocal }}{{ $label = $w.name_local }}{{ end }}
           {{ if ne $w.official_en_url "TODO: verify" }}
             <option value="{{ $slug }}">{{ $label }}</option>
           {{ else }}
