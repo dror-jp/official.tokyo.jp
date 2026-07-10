@@ -1,0 +1,38 @@
+---
+title: "救急・病気のとき"
+ja_term: "Medical emergency"
+summary: "救急車の呼び方、急ぎの相談、あなたの言葉がわかる病院の さがし方。"
+last_verified: "2026-07-10"
+numbers:
+  - number: "119"
+    tel: "119"
+    label: "救急車・消防車"
+    note: "24時間。英語・中国語・韓国語・ポルトガル語・スペイン語の 通訳が入れます。"
+  - number: "#7119"
+    tel: "%237119"
+    label: "救急車を呼ぶか まよったら"
+    note: "24時間の 相談電話。つながらないときは 03-3212-2323（23区）。"
+  - number: "03-5285-8181"
+    tel: "0352858181"
+    label: "ひまわり — 病院をさがす"
+    note: "毎日 9:00〜20:00。英語・中国語・韓国語・タイ語・スペイン語。"
+official_links:
+  - label: "救急車の呼び方（東京都・英語）"
+    url: "https://www.hokeniryo.metro.tokyo.lg.jp/iryo/iryo_hoken/medical_info_eng/emergency_call"
+    publisher: "東京都保健医療局"
+    verified: "2026-07-10"
+  - label: "救急車が必要か チェックできるサイト（東京消防庁・英語）"
+    url: "https://www.tfd.metro.tokyo.lg.jp/hp-kyuuimuka/en_guide/main/index.html"
+    publisher: "東京消防庁"
+    verified: "2026-07-10"
+  - label: "ひまわり（医療機関の案内サービス）"
+    url: "https://www.hokeniryo.metro.tokyo.lg.jp/iryo/iryo_hoken/medical_info_eng/himawari"
+    publisher: "東京都保健医療局"
+    verified: "2026-07-10"
+  - label: "外国人のための医療情報サイト（東京都・英語）"
+    url: "https://www.hokeniryo.metro.tokyo.lg.jp/iryo/iryo_hoken/medical_info_eng"
+    publisher: "東京都保健医療局"
+    verified: "2026-07-10"
+---
+
+**119に電話したら、こう言います:**「救急です（きゅうきゅうです）」。そのあと、**住所**、**どうしたか**、**年齢**を言います。通訳が 電話に入れます。

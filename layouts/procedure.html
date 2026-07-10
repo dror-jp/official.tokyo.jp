@@ -77,7 +77,7 @@
           {{ if $isMovingIn }}{{ with $w.moving_in_page_url }}
           <p><a href="{{ . }}" rel="noopener">{{ i18n "movingInPage" }} <span class="domain-pill">{{ (urls.Parse .).Host }}</span></a></p>
           {{ end }}{{ end }}
-          <p class="small"><a href="{{ printf "/wards/%s/" $slug | relURL }}">More about {{ $w.name_en }} →</a></p>
+          <p class="small"><a href="{{ printf "/wards/%s/" $slug | relLangURL }}">{{ if eq site.Language.Lang "ja" }}{{ $w.name_local }}のページ →{{ else }}More about {{ $w.name_en }} →{{ end }}</a></p>
         </div>
       {{ end }}
     {{ end }}

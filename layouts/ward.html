@@ -1,9 +1,10 @@
 {{ define "main" }}
 {{ $w := index hugo.Data.wards .Params.ward }}
+{{ $isJa := eq site.Language.Lang "ja" }}
 <div class="container">
-  <p class="crumb"><a href="{{ "/" | relURL }}">{{ i18n "backToHome" }}</a> / <a href="{{ "/wards/" | relURL }}">Wards</a> /</p>
+  <p class="crumb"><a href="{{ "/" | relLangURL }}">{{ i18n "backToHome" }}</a> / <a href="{{ "/wards/" | relLangURL }}">{{ i18n "yourWard" }}</a> /</p>
   <div class="page-head">
-    <h1>{{ $w.name_en }} <span class="ja-term">{{ $w.name_local }}</span></h1>
+    <h1>{{ if $isJa }}{{ $w.name_local }} <span class="ja-term">{{ $w.name_en }}</span>{{ else }}{{ $w.name_en }} <span class="ja-term">{{ $w.name_local }}</span>{{ end }}</h1>
     <p class="pill-verified">{{ i18n "lastVerified" }} {{ $w.last_verified }}</p>
   </div>
 
@@ -79,7 +80,7 @@
       {{ $current := .Params.ward }}
       {{ range $slug, $data := hugo.Data.wards }}
         {{ if and (ne $slug $current) $data.last_verified }}
-          <li><a href="{{ printf "/wards/%s/" $slug | relURL }}">{{ $data.name_en }} <span class="ja">{{ $data.name_local }}</span></a></li>
+          <li><a href="{{ printf "/wards/%s/" $slug | relLangURL }}">{{ if $isJa }}{{ $data.name_local }}{{ else }}{{ $data.name_en }} <span class="ja">{{ $data.name_local }}</span>{{ end }}</a></li>
         {{ end }}
       {{ end }}
     </ul>
