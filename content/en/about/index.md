@@ -39,9 +39,11 @@ across dozens of websites and hardest to find in your first month, exactly when 
 need it most. We don't think anyone should miss a deadline, lose a benefit, or
 hesitate to call an ambulance because of language.
 
-**The honest company answer.** DroR's work is about how information is found and
-trusted in the age of AI. This site is us practicing what we preach: information worth
-trusting is verified by a human, dated, and open. If this site makes you trust how we
+**The honest company answer.** DroR's mission is to support people's potential through
+*structure*, instead of leaving it to individual effort. We usually do that for
+organizations. This site applies the same belief to a city: whether your first months
+in Tokyo go well should not depend on how good you happen to be at searching. If the
+way this site is made — verified by a human, dated, open — earns your trust in how we
 work, that is the only return we get. Nothing here is monetized:
 
 - No advertising, no affiliate links, no tracking.
