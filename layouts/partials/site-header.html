@@ -4,13 +4,15 @@
       <span class="wordmark">official<span class="tld">.tokyo.jp</span></span>
       <span class="independent">{{ i18n "independentGuide" }}</span>
     </a>
-    <div class="ward-picker">
-      {{ if .IsTranslated }}
-        {{ $names := dict "en" "English" "ja" "やさしい日本語" "zh" "简体中文" "vi" "Tiếng Việt" "ne" "नेपाली" }}
-        {{ range .Translations }}
-          <a class="lang-switch" href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}">{{ index $names .Language.Lang | default .Language.Lang }}</a>
-        {{ end }}
+    {{ if .IsTranslated }}
+    <nav class="lang-nav" aria-label="Languages">
+      {{ $names := dict "en" "English" "ja" "やさしい日本語" "zh" "简体中文" "vi" "Tiếng Việt" "ne" "नेपाली" }}
+      {{ range .Translations }}
+        <a class="lang-switch" href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}">{{ index $names .Language.Lang | default .Language.Lang }}</a>
       {{ end }}
+    </nav>
+    {{ end }}
+    <div class="ward-picker">
       <label for="ward-select">{{ i18n "yourWard" }}</label>
       <select id="ward-select" aria-label="{{ i18n "selectYourWard" }}">
         <option value="">{{ i18n "selectYourWard" }}</option>

@@ -62,12 +62,27 @@ p { margin: 0 0 14px; }
   display: block; font-size: 11px; color: var(--muted); letter-spacing: 0.02em;
 }
 .ward-picker { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.lang-nav {
+  display: flex; gap: 8px; align-items: center;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.lang-nav::-webkit-scrollbar { display: none; }
 .lang-switch {
   font-size: 12.5px; font-weight: 600; text-decoration: none;
   color: var(--brand-dark); border: 1.5px solid var(--line);
   border-radius: 999px; padding: 5px 12px; white-space: nowrap;
+  flex-shrink: 0;
 }
 .lang-switch:hover { border-color: var(--brand); }
+@media (min-width: 761px) {
+  .lang-nav { margin-left: auto; }
+  .ward-picker { margin-left: 0; }
+}
+@media (max-width: 760px) {
+  /* two-row header: brand + ward selector on top, language pills scroll below */
+  .lang-nav { order: 3; width: 100%; padding-bottom: 2px; }
+}
 .ward-picker label { font-size: 12px; color: var(--muted); }
 .ward-picker select {
   font: inherit; font-size: 14px; color: var(--ink);
