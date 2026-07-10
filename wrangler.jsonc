@@ -3,6 +3,10 @@
   // Build: hugo --minify  ->  serve the generated ./public directory.
   "name": "official-tokyo-jp",
   "compatibility_date": "2026-07-10",
+  "routes": [
+    { "pattern": "official.tokyo.jp", "custom_domain": true },
+    { "pattern": "www.official.tokyo.jp", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./public",
     "html_handling": "auto-trailing-slash",
