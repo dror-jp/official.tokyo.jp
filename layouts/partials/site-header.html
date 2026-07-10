@@ -1,0 +1,21 @@
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="{{ "/" | relURL }}">
+      <span class="wordmark">official<span class="tld">.tokyo.jp</span></span>
+      <span class="independent">{{ i18n "independentGuide" }}</span>
+    </a>
+    <div class="ward-picker">
+      <label for="ward-select">{{ i18n "yourWard" }}</label>
+      <select id="ward-select" aria-label="{{ i18n "selectYourWard" }}">
+        <option value="">{{ i18n "selectYourWard" }}</option>
+        {{ range $slug, $w := hugo.Data.wards }}
+          {{ if ne $w.official_en_url "TODO: verify" }}
+            <option value="{{ $slug }}">{{ $w.name_en }}</option>
+          {{ else }}
+            <option value="{{ $slug }}" disabled>{{ $w.name_en }} — {{ i18n "comingSoon" }}</option>
+          {{ end }}
+        {{ end }}
+      </select>
+    </div>
+  </div>
+</header>

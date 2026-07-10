@@ -1,0 +1,340 @@
+/* official.tokyo.jp — lightweight, mobile-first, deliberately NOT government-styled.
+   No framework. System fonts only. One accent color (deep teal — no ministry navy). */
+
+:root {
+  --bg: #FFFFFF;
+  --bg-soft: #F4F7F6;
+  --ink: #1C2428;
+  --muted: #5C6B70;
+  --line: #DFE7E6;
+  --brand: #0E7377;
+  --brand-dark: #0A5A5E;
+  --brand-tint: #E4F1F0;
+  --alert: #B4232A;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    "Hiragino Sans", "Noto Sans CJK JP", Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.mono { font-family: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace; }
+
+.container { max-width: 680px; margin: 0 auto; padding: 0 18px; }
+
+a { color: var(--brand-dark); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, select:focus-visible {
+  outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 4px;
+}
+h1, h2, h3, p, dd, li { overflow-wrap: break-word; }
+a[href^="http"] { overflow-wrap: anywhere; }
+h1 { font-size: clamp(26px, 6vw, 34px); line-height: 1.3; margin: 0 0 8px; letter-spacing: -0.01em; }
+h2 { font-size: 20px; margin: 36px 0 12px; line-height: 1.4; }
+h3 { font-size: 16.5px; margin: 20px 0 8px; }
+p { margin: 0 0 14px; }
+.muted { color: var(--muted); }
+.small { font-size: 13.5px; }
+
+/* Japanese term shown next to English titles */
+.ja-term {
+  display: inline-block;
+  font-size: 15px; font-weight: 400; color: var(--muted);
+  margin-left: 2px;
+}
+
+/* ---------- header ---------- */
+.site-header { border-bottom: 1px solid var(--line); background: var(--bg); }
+.site-header .container {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px;
+  padding-top: 12px; padding-bottom: 12px;
+}
+.brand { text-decoration: none; color: var(--ink); line-height: 1.2; }
+.brand .wordmark { font-weight: 700; font-size: 17px; letter-spacing: -0.01em; }
+.brand .wordmark .tld { color: var(--brand); }
+.brand .independent {
+  display: block; font-size: 11px; color: var(--muted); letter-spacing: 0.02em;
+}
+.ward-picker { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.ward-picker label { font-size: 12px; color: var(--muted); }
+.ward-picker select {
+  font: inherit; font-size: 14px; color: var(--ink);
+  padding: 7px 10px; border: 1.5px solid var(--line); border-radius: 8px;
+  background: var(--bg-soft); max-width: 46vw;
+}
+
+/* ---------- home ---------- */
+.hero { padding: 40px 0 8px; }
+.hero .tagline { font-size: 17px; color: var(--muted); margin-bottom: 18px; }
+.declaration {
+  display: inline-block;
+  background: var(--brand-tint); color: var(--brand-dark);
+  border-radius: 999px; padding: 6px 14px;
+  font-size: 13.5px; font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card-grid { display: grid; gap: 12px; margin: 22px 0 8px; }
+@media (min-width: 560px) { .card-grid { grid-template-columns: 1fr 1fr; } }
+.scene-card {
+  display: block; text-decoration: none; color: var(--ink);
+  border: 1.5px solid var(--line); border-radius: var(--radius);
+  padding: 18px 18px 16px; background: var(--bg);
+  position: relative;
+}
+.scene-card:hover, .scene-card:active { border-color: var(--brand); }
+a.scene-card::after {
+  content: "→"; position: absolute; right: 16px; top: 14px;
+  font-size: 18px; color: var(--line); transition: color 0.15s;
+}
+a.scene-card:hover::after { color: var(--brand); }
+.scene-icon { display: block; color: var(--brand); margin-bottom: 8px; }
+.alert-card .scene-icon { color: var(--alert); }
+.scene-card .scene-kicker { font-size: 12.5px; color: var(--brand-dark); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.scene-card h2, .scene-card h3 { margin: 4px 0 6px; font-size: 18px; }
+.scene-card p { margin: 0; font-size: 14.5px; color: var(--muted); }
+.scene-card.soon { opacity: 0.62; border-style: dashed; }
+.scene-card.soon .badge-soon {
+  display: inline-block; font-size: 11px; font-weight: 700; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; margin-top: 8px;
+}
+.scene-card.alert-card { border-color: color-mix(in srgb, var(--alert) 40%, var(--line)); }
+.scene-card.alert-card .scene-kicker { color: var(--alert); }
+
+/* ---------- procedure page ---------- */
+.page-head {
+  background: var(--bg-soft); border-radius: 14px;
+  padding: 26px 22px 22px; margin: 18px 0 4px;
+}
+.summary { font-size: 17px; color: var(--muted); }
+
+.block { margin: 34px 0; }
+.block > h2 {
+  margin: 0 0 14px; font-size: 15px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--brand-dark);
+}
+.block > h2::after {
+  content: ""; display: block; width: 42px; height: 3px;
+  background: var(--brand); border-radius: 2px; margin-top: 7px;
+}
+
+.steps { list-style: none; counter-reset: step; padding: 0; margin: 0; }
+.steps li {
+  counter-increment: step; position: relative;
+  padding: 0 0 18px 52px; margin: 0;
+}
+.steps li::before {
+  content: counter(step);
+  position: absolute; left: 0; top: 0;
+  width: 34px; height: 34px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--brand); color: #fff; font-weight: 700; font-size: 16px;
+}
+.steps li::after {
+  content: ""; position: absolute; left: 17px; top: 38px; bottom: 2px;
+  width: 2px; background: var(--brand-tint);
+}
+.steps li:last-child { padding-bottom: 0; }
+.steps li:last-child::after { display: none; }
+.steps .step-title { font-weight: 700; display: block; }
+.steps .step-text { font-size: 15px; color: var(--muted); }
+
+.bring-list { list-style: none; padding: 0; margin: 0; }
+.bring-list li {
+  position: relative; padding: 8px 0 8px 34px;
+  border-bottom: 1px solid var(--line); font-size: 15.5px;
+}
+.bring-list li:last-child { border-bottom: none; }
+.bring-list li::before {
+  content: ""; position: absolute; left: 2px; top: 13px;
+  width: 16px; height: 16px; border: 2px solid var(--brand); border-radius: 4px;
+}
+.bring-list .cond { color: var(--muted); font-size: 13.5px; }
+
+/* where to go */
+.counter-card {
+  border: 1.5px solid var(--line); border-radius: var(--radius);
+  padding: 16px 18px; background: var(--bg-soft); margin-bottom: 10px;
+}
+.counter-card h3 { margin: 0 0 6px; }
+.counter-card dl { margin: 0; font-size: 14.5px; }
+.counter-card dt { font-weight: 700; margin-top: 8px; font-size: 12.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.counter-card dd { margin: 0; }
+.ward-prompt {
+  border: 1.5px dashed var(--line); border-radius: var(--radius);
+  padding: 14px 18px; color: var(--muted); font-size: 14.5px;
+}
+
+/* official links */
+.official-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.official-links a {
+  display: block; text-decoration: none;
+  border: 1.5px solid var(--line); border-radius: var(--radius);
+  padding: 13px 16px; color: var(--ink);
+}
+.official-links a:hover { border-color: var(--brand); }
+.official-links .link-label { font-weight: 600; display: block; margin-bottom: 4px; }
+.official-links .link-meta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+.domain-pill {
+  font-family: ui-monospace, Consolas, monospace; font-size: 12px;
+  background: var(--brand-tint); color: var(--brand-dark);
+  border-radius: 5px; padding: 1px 8px;
+}
+.link-verified { font-size: 12px; color: var(--muted); }
+.link-publisher { font-size: 12.5px; color: var(--muted); }
+
+.link-note { display: block; font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+/* key facts chips (deadline / cost / where) */
+.facts-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+.fact-chip {
+  display: inline-flex; align-items: baseline; gap: 7px;
+  border: 1.5px solid var(--line); border-radius: 999px;
+  padding: 5px 14px; font-size: 13.5px; background: var(--bg);
+}
+.fact-chip b {
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--brand-dark);
+}
+
+/* visible FAQ */
+.faq { margin: 0; }
+.faq dt { font-weight: 700; margin: 16px 0 4px; }
+.faq dt:first-child { margin-top: 0; }
+.faq dd { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* glossary */
+.glossary { margin: 24px 0; }
+.glossary dt {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px;
+  font-weight: 700; font-size: 18px; margin: 22px 0 4px;
+  padding-top: 18px; border-top: 1px solid var(--line);
+}
+.glossary dt:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+.glossary .g-romaji { font-weight: 400; font-size: 14px; color: var(--brand-dark); font-style: italic; }
+.glossary dd { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* counter-card language help line */
+.desk-help {
+  font-size: 13.5px; margin: 10px 0 8px; padding: 8px 12px;
+  background: var(--brand-tint); border-radius: 8px; color: var(--ink);
+}
+
+/* ward quick chips */
+.ward-chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; margin: 12px 0 0; }
+.ward-chips a {
+  display: inline-block; text-decoration: none;
+  border: 1.5px solid var(--line); border-radius: 999px;
+  padding: 7px 16px; font-size: 14.5px; font-weight: 600; color: var(--ink);
+  background: var(--bg);
+}
+.ward-chips a:hover { border-color: var(--brand); color: var(--brand-dark); }
+.ward-chips .ja { font-weight: 400; color: var(--muted); font-size: 13px; }
+
+/* footer columns */
+.foot-cols { display: grid; gap: 20px 32px; margin: 16px 0 8px; }
+@media (min-width: 560px) { .foot-cols { grid-template-columns: auto auto 1fr; } }
+.foot-cols h3 {
+  margin: 0 0 6px; font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+}
+.foot-cols ul { list-style: none; padding: 0; margin: 0; }
+.foot-cols li { margin: 0 0 4px; }
+.mission { font-size: 14px; color: var(--ink); margin: 0 0 16px; }
+
+/* emergency phone cards — built to be read in a hurry */
+.phone-grid { display: grid; gap: 10px; margin: 22px 0; }
+@media (min-width: 560px) { .phone-grid { grid-template-columns: 1fr 1fr; } }
+.phone-card {
+  display: block; text-decoration: none;
+  border: 2px solid var(--alert); border-radius: var(--radius);
+  padding: 14px 18px; color: var(--ink); background: #FDF6F6;
+}
+.phone-card .phone-label {
+  display: block; font-size: 13px; font-weight: 700;
+  letter-spacing: 0.05em; text-transform: uppercase; color: var(--alert);
+}
+.phone-card .phone-number {
+  display: block; font-size: 34px; font-weight: 800; line-height: 1.25;
+  color: var(--ink); font-variant-numeric: tabular-nums;
+}
+.phone-card .phone-note { display: block; font-size: 13px; color: var(--muted); }
+
+.pill-verified {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 600; color: var(--brand-dark);
+  background: var(--brand-tint); border-radius: 999px; padding: 5px 14px;
+}
+.pill-verified::before { content: "✓"; font-weight: 900; }
+
+/* ---------- ward page ---------- */
+.ward-facts { display: grid; gap: 12px; margin: 20px 0; }
+.fact-card {
+  border: 1.5px solid var(--line); border-radius: var(--radius);
+  padding: 15px 18px;
+}
+.fact-card h2 { margin: 0 0 6px; font-size: 16px; }
+.fact-card p, .fact-card ul { font-size: 14.5px; margin: 0 0 6px; }
+.fact-card .langs { display: flex; flex-wrap: wrap; gap: 5px; padding: 0; list-style: none; margin: 8px 0 0; }
+.fact-card .langs li {
+  font-size: 12px; background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: 999px; padding: 1px 9px;
+}
+
+/* ---------- footer ---------- */
+.site-footer {
+  margin-top: 64px; border-top: 1px solid var(--line);
+  background: var(--bg-soft); padding: 26px 0 40px;
+  font-size: 13.5px; color: var(--muted);
+}
+.site-footer .not-gov {
+  font-weight: 700; color: var(--ink); font-size: 14.5px; margin-bottom: 10px;
+}
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 10px 0; }
+.site-footer a { color: var(--brand-dark); }
+
+/* breadcrumb-lite */
+.crumb { font-size: 13px; margin: 18px 0 0; color: var(--muted); }
+.crumb a { color: var(--muted); }
+
+/* skip link (visible on keyboard focus only) */
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--brand); color: #fff; font-weight: 700;
+  padding: 10px 18px; border-radius: 0 0 8px 0; z-index: 100;
+}
+.skip-link:focus { left: 0; }
+
+/* "show this at the counter" — designed to be held up on a phone screen */
+.counter-phrase {
+  border: 2px solid var(--brand); border-radius: var(--radius);
+  padding: 16px 20px; margin: 0 0 14px; background: var(--bg);
+  display: grid; gap: 4px;
+}
+.counter-phrase .cp-label {
+  font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--brand-dark);
+}
+.counter-phrase .cp-ja { font-size: 26px; font-weight: 700; line-height: 1.5; }
+.counter-phrase .cp-en { font-size: 13.5px; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* print: for counter visits and emergency wall-sheets */
+@media print {
+  .site-header .ward-picker, .site-footer nav, .skip-link, .crumb { display: none; }
+  .scene-card, .counter-card, .fact-card, .official-links a, .phone-card, .counter-phrase {
+    break-inside: avoid; border-color: #999;
+  }
+  .official-links a::after { content: " (" attr(href) ")"; font-size: 11px; color: #555; word-break: break-all; }
+  body { font-size: 13px; }
+  a { color: #000; }
+}

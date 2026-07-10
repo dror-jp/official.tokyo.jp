@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="container">
+  <p class="crumb"><a href="{{ "/" | relURL }}">{{ i18n "backToHome" }}</a> /</p>
+  <div class="page-head">
+    <h1>{{ .Title }}{{ with .Params.ja_term }} <span class="ja-term">{{ . }}</span>{{ end }}</h1>
+    {{ with .Params.summary }}<p class="summary">{{ . }}</p>{{ end }}
+  </div>
+  {{ partial "phone-cards.html" (dict "numbers" .Params.numbers) }}
+  {{ .Content }}
+  <div class="card-grid">
+    {{ range .Pages }}
+      <a class="scene-card" href="{{ .RelPermalink }}">
+        <h3>{{ .Title }}{{ with .Params.ja_term }} <span class="ja-term">{{ . }}</span>{{ end }}</h3>
+        <p>{{ .Params.summary }}</p>
+      </a>
+    {{ end }}
+    {{ range .Params.planned }}
+      <div class="scene-card soon">
+        <h3>{{ .title }}{{ with .ja_term }} <span class="ja-term">{{ . }}</span>{{ end }}</h3>
+        <p>{{ .desc }}</p>
+        <span class="badge-soon">{{ i18n "comingSoon" }}</span>
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,32 @@
+name: Build and verify links
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+  schedule:
+    # Weekly, Friday 06:00 JST (Thursday 21:00 UTC) — the freshness heartbeat
+    - cron: "0 21 * * 4"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.164.0"
+          extended: true
+      - name: Build site
+        run: hugo --minify --logLevel info
+
+  check-links:
+    runs-on: ubuntu-latest
+    # Link rot is the site's #1 operational risk (see strategy.html).
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify every published official link
+        shell: pwsh
+        run: ./scripts/Check-Links.ps1

@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="container">
+  <section class="hero">
+    <p class="declaration">{{ i18n "notGovernment" }}</p>
+    <h1>{{ i18n "whatDoYouNeed" }}</h1>
+    <p class="tagline">{{ site.Params.tagline }} Simple steps, then straight to the genuine official pages — every link checked by a human, with the date we checked it.</p>
+  </section>
+  <div class="card-grid">
+    {{ range .Params.scenes }}
+      {{ if .soon }}
+        <div class="scene-card soon{{ if .alert }} alert-card{{ end }}">
+          {{ with .icon }}<span class="scene-icon">{{ partial "icon.html" . }}</span>{{ end }}
+          <span class="scene-kicker">{{ .kicker }}</span>
+          <h2>{{ .title }}</h2>
+          <p>{{ .desc }}</p>
+          <span class="badge-soon">{{ i18n "comingSoon" }}</span>
+        </div>
+      {{ else }}
+        <a class="scene-card{{ if .alert }} alert-card{{ end }}" href="{{ .url | relURL }}">
+          {{ with .icon }}<span class="scene-icon">{{ partial "icon.html" . }}</span>{{ end }}
+          <span class="scene-kicker">{{ .kicker }}</span>
+          <h2>{{ .title }}</h2>
+          <p>{{ .desc }}</p>
+        </a>
+      {{ end }}
+    {{ end }}
+  </div>
+  <section class="block">
+    <h2 style="margin-top:28px">{{ i18n "pickYourWard" }}</h2>
+    <ul class="ward-chips">
+      {{ range $slug, $data := hugo.Data.wards }}
+        {{ if $data.last_verified }}
+          <li><a href="{{ printf "/wards/%s/" $slug | relURL }}">{{ $data.name_en }} <span class="ja">{{ $data.name_local }}</span></a></li>
+        {{ end }}
+      {{ end }}
+    </ul>
+    <p class="small muted" style="margin-top:10px">All 23 wards covered — every link checked by a human on the date shown.</p>
+  </section>
+  {{ .Content }}
+</div>
+{{ end }}

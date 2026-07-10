@@ -1,0 +1,88 @@
+{{ define "main" }}
+{{ $w := index hugo.Data.wards .Params.ward }}
+<div class="container">
+  <p class="crumb"><a href="{{ "/" | relURL }}">{{ i18n "backToHome" }}</a> / <a href="{{ "/wards/" | relURL }}">Wards</a> /</p>
+  <div class="page-head">
+    <h1>{{ $w.name_en }} <span class="ja-term">{{ $w.name_local }}</span></h1>
+    <p class="pill-verified">{{ i18n "lastVerified" }} {{ $w.last_verified }}</p>
+  </div>
+
+  <div class="ward-facts">
+    <div class="fact-card">
+      <h2>{{ i18n "officialSite" }}</h2>
+      <p><a href="{{ $w.official_en_url }}" rel="noopener">{{ $w.official_en_url }}</a></p>
+      <p><span class="domain-pill">{{ (urls.Parse $w.official_en_url).Host }}</span></p>
+      {{ with $w.official_en_note }}<p class="small muted">{{ . }}</p>{{ end }}
+    </div>
+
+    {{ with $w.foreign_desk }}
+    <div class="fact-card">
+      <h2>{{ i18n "foreignDesk" }}</h2>
+      <p><strong>{{ .name_en }}</strong><br><span class="ja-term">{{ .name_local }}</span></p>
+      <p><strong>{{ i18n "addressLabel" }}:</strong> {{ .address }} — <a href="https://www.google.com/maps/search/?api=1&query={{ .address | urlquery }}" rel="noopener">{{ i18n "openInMaps" }}</a></p>
+      <p><strong>{{ i18n "hoursLabel" }}:</strong> {{ .hours }}</p>
+      {{ with .phone }}<p><strong>{{ i18n "phoneLabel" }}:</strong> <a href="tel:{{ replace . "-" "" }}">{{ . }}</a></p>{{ end }}
+      <p><strong>{{ i18n "languagesLabel" }}:</strong></p>
+      <ul class="langs">
+        {{ range .languages }}<li>{{ . }}</li>{{ end }}
+      </ul>
+      {{ with .languages_note }}<p class="small muted">{{ . }}</p>{{ end }}
+      <p><a href="{{ .url }}" rel="noopener">Official page <span class="domain-pill">{{ (urls.Parse .url).Host }}</span></a></p>
+    </div>
+    {{ end }}
+
+    {{ with $w.garbage_guide_url }}
+    <div class="fact-card">
+      <h2>{{ i18n "garbageGuide" }}</h2>
+      <p><a href="{{ . }}" rel="noopener">{{ $w.garbage_guide_label | default . }}</a> <span class="domain-pill">{{ (urls.Parse .).Host }}</span></p>
+      {{ with $w.garbage_guide_page_url }}<p class="small"><a href="{{ . }}" rel="noopener">Overview page <span class="domain-pill">{{ (urls.Parse .).Host }}</span></a></p>{{ end }}
+    </div>
+    {{ end }}
+
+    <div class="fact-card">
+      <h2>{{ i18n "wardOffice" }}</h2>
+      <p>{{ $w.office_address }}</p>
+      {{ with $w.office_phone }}<p><strong>{{ i18n "phoneLabel" }}:</strong> <a href="tel:{{ replace . "-" "" }}">{{ . }}</a></p>{{ end }}
+      {{ with $w.office_hours }}<p class="small muted">{{ . }}</p>{{ end }}
+      <p><a href="https://www.google.com/maps/search/?api=1&query={{ $w.office_address | urlquery }}" rel="noopener">{{ i18n "openInMaps" }}</a></p>
+    </div>
+
+    {{ with $w.moving_in_page_url }}
+    <div class="fact-card">
+      <h2>{{ i18n "movingInPage" }}</h2>
+      <p><a href="{{ . }}" rel="noopener">{{ . }}</a> <span class="domain-pill">{{ (urls.Parse .).Host }}</span></p>
+      {{ with $w.moving_in_note }}<p class="small muted">{{ . }}</p>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+  {{ $procs := where site.RegularPages "Params.where_scope" "ward" }}
+  {{ with $procs }}
+  <section class="block">
+    <h2>{{ i18n "proceduresHere" }}</h2>
+    <div class="card-grid">
+      {{ range . }}
+        <a class="scene-card" href="{{ .RelPermalink }}">
+          <h3>{{ .Title }}{{ with .Params.ja_term }} <span class="ja-term">{{ . }}</span>{{ end }}</h3>
+          <p>{{ .Params.summary }}</p>
+        </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ .Content }}
+
+  <section class="block">
+    <h2>{{ i18n "otherWards" }}</h2>
+    <ul class="ward-chips">
+      {{ $current := .Params.ward }}
+      {{ range $slug, $data := hugo.Data.wards }}
+        {{ if and (ne $slug $current) $data.last_verified }}
+          <li><a href="{{ printf "/wards/%s/" $slug | relURL }}">{{ $data.name_en }} <span class="ja">{{ $data.name_local }}</span></a></li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </section>
+</div>
+{{ end }}

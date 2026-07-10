@@ -1,0 +1,121 @@
+{{ define "main" }}
+{{ $p := .Params }}
+<div class="container">
+  <p class="crumb"><a href="{{ "/" | relURL }}">{{ i18n "backToHome" }}</a> / <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> /</p>
+  <div class="page-head">
+    <h1>{{ .Title }}{{ with $p.ja_term }} <span class="ja-term">{{ . }}</span>{{ end }}</h1>
+    <p class="summary">{{ $p.summary }}</p>
+    {{ if or $p.deadline $p.cost $p.place }}
+    <div class="facts-row">
+      {{ with $p.deadline }}<span class="fact-chip"><b>{{ i18n "deadlineLabel" }}</b> {{ . }}</span>{{ end }}
+      {{ with $p.cost }}<span class="fact-chip"><b>{{ i18n "costLabel" }}</b> {{ . }}</span>{{ end }}
+      {{ with $p.place }}<span class="fact-chip"><b>{{ i18n "placeLabel" }}</b> {{ . }}</span>{{ end }}
+    </div>
+    {{ end }}
+    <p class="pill-verified">{{ i18n "lastVerified" }} {{ $p.last_verified }}</p>
+  </div>
+
+  {{ partial "phone-cards.html" (dict "numbers" $p.numbers) }}
+
+  <section class="block">
+    <h2>{{ i18n "whoNeeds" }}</h2>
+    <p>{{ $p.who }}</p>
+  </section>
+
+  <section class="block">
+    <h2>{{ i18n "steps" }}</h2>
+    <ol class="steps">
+      {{ range $p.steps }}
+        <li>
+          <span class="step-title">{{ .title }}</span>
+          <span class="step-text">{{ .text }}</span>
+        </li>
+      {{ end }}
+    </ol>
+  </section>
+
+  {{ with $p.bring }}
+  <section class="block">
+    <h2>{{ i18n "whatToBring" }}</h2>
+    <ul class="bring-list">
+      {{ range . }}
+        <li>{{ .item }}{{ with .cond }} <span class="cond">{{ . }}</span>{{ end }}</li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
+  {{ if eq $p.where_scope "ward" }}
+  <section class="block">
+    <h2>{{ i18n "whereToGo" }}</h2>
+    {{ with $p.where_intro }}<p>{{ . }}</p>{{ end }}
+    {{ with $p.counter_phrase }}
+    <div class="counter-phrase">
+      <span class="cp-label">{{ i18n "showAtCounter" }}</span>
+      <span class="cp-ja" lang="ja">{{ .ja }}</span>
+      <span class="cp-en">{{ .en }}</span>
+    </div>
+    {{ end }}
+    <div class="ward-prompt" data-ward-prompt>{{ i18n "noWardSelected" }}</div>
+    <div class="ward-prompt" data-ward-missing hidden>{{ i18n "wardNotListed" }}</div>
+    {{ $isMovingIn := eq $p.category "moving-in" }}
+    {{ range $slug, $w := hugo.Data.wards }}
+      {{ if $w.last_verified }}
+        <div class="counter-card" data-ward="{{ $slug }}">
+          <h3>{{ $w.name_en }} <span class="ja-term">{{ $w.name_local }}</span></h3>
+          <dl>
+            <dt>{{ i18n "addressLabel" }}</dt>
+            <dd>{{ $w.office_address }} — <a href="https://www.google.com/maps/search/?api=1&query={{ $w.office_address | urlquery }}" rel="noopener">{{ i18n "openInMaps" }}</a></dd>
+            {{ with $w.office_hours }}<dt>{{ i18n "hoursLabel" }}</dt><dd>{{ . }}</dd>{{ end }}
+            {{ with $w.office_phone }}<dt>{{ i18n "phoneLabel" }}</dt><dd><a href="tel:{{ replace . "-" "" }}">{{ . }}</a></dd>{{ end }}
+          </dl>
+          {{ if $isMovingIn }}{{ with $w.moving_in_note }}<p class="small muted">{{ . }}</p>{{ end }}{{ end }}
+          {{ with $w.foreign_desk }}
+          <p class="desk-help"><strong>{{ i18n "helpInLanguage" }}:</strong>
+            {{ delimit (first 4 .languages) ", " }}{{ if gt (len .languages) 4 }} +{{ sub (len .languages) 4 }} more{{ end }}{{ with .phone }} — <a href="tel:{{ replace . "-" "" }}">{{ . }}</a>{{ end }}</p>
+          {{ end }}
+          {{ if $isMovingIn }}{{ with $w.moving_in_page_url }}
+          <p><a href="{{ . }}" rel="noopener">{{ i18n "movingInPage" }} <span class="domain-pill">{{ (urls.Parse .).Host }}</span></a></p>
+          {{ end }}{{ end }}
+          <p class="small"><a href="{{ printf "/wards/%s/" $slug | relURL }}">More about {{ $w.name_en }} →</a></p>
+        </div>
+      {{ end }}
+    {{ end }}
+  </section>
+  {{ end }}
+
+  <section class="block">
+    <h2>{{ i18n "officialLinks" }}</h2>
+    <p class="small muted">{{ i18n "sourceNote" }}</p>
+    {{ partial "official-links.html" (dict "links" $p.official_links) }}
+  </section>
+
+  {{ with $p.faq }}
+  <section class="block">
+    <h2>{{ i18n "commonQuestions" }}</h2>
+    <dl class="faq">
+      {{ range . }}
+        <dt>{{ .q }}</dt>
+        <dd>{{ .a }}</dd>
+      {{ end }}
+    </dl>
+  </section>
+  {{ end }}
+
+  {{ .Content }}
+
+  {{ with $p.next }}
+  <section class="block">
+    <h2>{{ i18n "whatsNext" }}</h2>
+    <div class="card-grid">
+      {{ range . }}
+        <a class="scene-card" href="{{ .url | relURL }}">
+          <h3>{{ .title }}{{ with .ja_term }} <span class="ja-term">{{ . }}</span>{{ end }}</h3>
+          <p>{{ .desc }}</p>
+        </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+</div>
+{{ end }}

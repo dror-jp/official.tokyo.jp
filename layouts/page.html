@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="container">
+  <p class="crumb"><a href="{{ "/" | relURL }}">{{ i18n "backToHome" }}</a> /{{ if .Parent }}{{ if not .Parent.IsHome }} <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> /{{ end }}{{ end }}</p>
+  <div class="page-head">
+    <h1>{{ .Title }}{{ with .Params.ja_term }} <span class="ja-term">{{ . }}</span>{{ end }}</h1>
+    {{ with .Params.summary }}<p class="summary">{{ . }}</p>{{ end }}
+    {{ with .Params.last_verified }}<p class="pill-verified">{{ i18n "lastVerified" }} {{ . }}</p>{{ end }}
+  </div>
+
+  {{ partial "phone-cards.html" (dict "numbers" .Params.numbers) }}
+
+  {{ .Content }}
+
+  {{ if .Params.show_glossary }}
+  <dl class="glossary">
+    {{ range hugo.Data.glossary.terms }}
+      <dt><span class="g-ja">{{ .ja }}</span> <span class="g-romaji">{{ .romaji }}</span></dt>
+      <dd>{{ .en }}</dd>
+    {{ end }}
+  </dl>
+  {{ end }}
+
+  {{ with .Params.official_links }}
+  <section class="block">
+    <h2>{{ i18n "officialLinks" }}</h2>
+    <p class="small muted">{{ i18n "sourceNote" }}</p>
+    {{ partial "official-links.html" (dict "links" .) }}
+  </section>
+  {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,9 @@
+{{- $out := dict
+      "name" "official.tokyo.jp ward data"
+      "description" "Verified data on Tokyo ward services for foreign residents. Every ward carries a last_verified date."
+      "license" "https://creativecommons.org/licenses/by/4.0/"
+      "attribution" "official.tokyo.jp (DroR Corporation)"
+      "source" site.BaseURL
+      "wards" hugo.Data.wards
+-}}
+{{- $out | jsonify (dict "indent" "  ") -}}

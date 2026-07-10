@@ -1,0 +1,19 @@
+{{- /* Shared renderer for verified official links.
+     Usage: {{ partial "official-links.html" (dict "links" .Params.official_links) }} */ -}}
+{{ with .links }}
+<ul class="official-links">
+  {{ range . }}
+    <li>
+      <a href="{{ .url }}" rel="noopener">
+        <span class="link-label">{{ .label }}</span>
+        <span class="link-meta">
+          <span class="domain-pill">{{ (urls.Parse .url).Host }}</span>
+          {{ with .publisher }}<span class="link-publisher">{{ . }}</span>{{ end }}
+          <span class="link-verified">{{ i18n "verifiedOn" }} {{ .verified }}</span>
+        </span>
+        {{ with .note }}<span class="link-note">{{ . }}</span>{{ end }}
+      </a>
+    </li>
+  {{ end }}
+</ul>
+{{ end }}

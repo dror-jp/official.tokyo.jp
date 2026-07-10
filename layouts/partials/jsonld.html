@@ -1,0 +1,64 @@
+{{- /* Structured data. Site-wide: WebSite + Organization (publisher = DroR Corporation).
+     Procedure pages: HowTo (+ FAQPage when faq is present).
+     Ward pages: AboutPage referencing the ward office as GovernmentOffice. */ -}}
+{{- $org := dict
+      "@type" "Organization"
+      "name" site.Params.operatorName
+      "url" site.Params.operatorUrl
+      "sameAs" (slice site.Params.operatorUrl)
+-}}
+{{- $website := dict
+      "@context" "https://schema.org"
+      "@type" "WebSite"
+      "name" site.Title
+      "url" site.BaseURL
+      "description" "Independent, non-government navigation site linking foreign residents of Tokyo to official sources for life procedures."
+      "inLanguage" site.Language.Locale
+      "publisher" $org
+-}}
+<script type="application/ld+json">{{ $website | jsonify | safeJS }}</script>
+{{- if eq .Params.layout "procedure" -}}
+  {{- $steps := slice -}}
+  {{- range $i, $s := .Params.steps -}}
+    {{- $steps = $steps | append (dict "@type" "HowToStep" "position" (add $i 1) "name" $s.title "text" $s.text) -}}
+  {{- end -}}
+  {{- $howto := dict
+        "@context" "https://schema.org"
+        "@type" "HowTo"
+        "name" .Title
+        "description" .Params.summary
+        "inLanguage" site.Language.Locale
+        "step" $steps
+        "dateModified" .Params.last_verified
+  -}}
+  <script type="application/ld+json">{{ $howto | jsonify | safeJS }}</script>
+  {{- with .Params.faq -}}
+    {{- $qs := slice -}}
+    {{- range . -}}
+      {{- $qs = $qs | append (dict "@type" "Question" "name" .q "acceptedAnswer" (dict "@type" "Answer" "text" .a)) -}}
+    {{- end -}}
+    {{- $faqld := dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $qs -}}
+    <script type="application/ld+json">{{ $faqld | jsonify | safeJS }}</script>
+  {{- end -}}
+{{- end -}}
+{{- if eq .Params.layout "ward" -}}
+  {{- $w := index hugo.Data.wards .Params.ward -}}
+  {{- if $w -}}
+    {{- $office := dict
+          "@type" "GovernmentOffice"
+          "name" (printf "%s City Office (%s)" $w.name_en $w.name_local)
+          "address" $w.office_address
+          "sameAs" $w.official_en_url
+    -}}
+    {{- $page := dict
+          "@context" "https://schema.org"
+          "@type" "AboutPage"
+          "name" .Title
+          "url" .Permalink
+          "dateModified" $w.last_verified
+          "about" $office
+          "publisher" $org
+    -}}
+    <script type="application/ld+json">{{ $page | jsonify | safeJS }}</script>
+  {{- end -}}
+{{- end -}}

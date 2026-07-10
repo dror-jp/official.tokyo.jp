@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="container">
+  <div class="page-head" style="margin-top:48px">
+    <h1>Page not found <span class="ja-term">404</span></h1>
+    <p class="summary">This page doesn't exist — or a government site reorganized and we haven't caught up yet. Sorry about that.</p>
+  </div>
+  <div class="card-grid">
+    <a class="scene-card" href="{{ "/" | relURL }}">
+      <span class="scene-kicker">Start over</span>
+      <h2>What do you need?</h2>
+      <p>Back to the home page and pick your situation.</p>
+    </a>
+    <a class="scene-card alert-card" href="{{ "/emergency/" | relURL }}">
+      <span class="scene-kicker">Urgent</span>
+      <h2>Emergency</h2>
+      <p>119, #7119 and multilingual helplines.</p>
+    </a>
+  </div>
+</div>
+{{ end }}

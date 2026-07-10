@@ -1,0 +1,13 @@
+{{- /* Emergency phone number cards. Usage:
+     {{ partial "phone-cards.html" (dict "numbers" .Params.numbers) }} */ -}}
+{{ with .numbers }}
+<div class="phone-grid">
+  {{ range . }}
+    <a class="phone-card" href="tel:{{ .tel | default .number }}">
+      <span class="phone-label">{{ .label }}</span>
+      <span class="phone-number">{{ .number }}</span>
+      {{ with .note }}<span class="phone-note">{{ . }}</span>{{ end }}
+    </a>
+  {{ end }}
+</div>
+{{ end }}

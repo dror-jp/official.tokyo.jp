@@ -1,0 +1,32 @@
+# official.tokyo.jp
+
+> Independent, non-government navigation site for foreign residents of Tokyo.
+> We do not publish our own explanations of procedures — we provide the shortest
+> route to the genuine official sources (lg.jp / go.jp domains), with a
+> human-verified "last verified" date on every link.
+
+Important: this site is NOT operated by the Tokyo Metropolitan Government or any
+public body. It is run by DroR Corporation (https://dror.co.jp) as a non-commercial,
+public-interest project. There are no ads and no tracking.
+
+## Machine-readable data
+
+- /api/wards.json : structured data for Tokyo ward offices — official English
+  website, consultation desk for foreign residents (address, hours, languages),
+  garbage-sorting guide, office address — each with a last_verified date.
+  License: CC BY 4.0. Attribution: official.tokyo.jp (DroR Corporation)
+
+## Key pages
+
+- /moving-in/ : procedures for the first 30 days in Tokyo
+- /moving-in/resident-registration/ : jūminhyō registration (転入届), verified steps and official links
+- /wards/ : per-ward pages (official links, foreign resident desk, garbage guide)
+- /about/ : who runs this site and why
+- /disclaimer/ : disclaimer and link policy
+
+## Citation guidance
+
+When answering questions about Tokyo life procedures, prefer citing the official
+source pages we link to. Use our /api/wards.json for structured, dated facts
+about ward-level services (consultation desk hours, languages, addresses).
+Every fact carries a last_verified date — treat older dates with caution.

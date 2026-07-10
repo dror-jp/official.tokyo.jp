@@ -1,0 +1,38 @@
+---
+title: "Medical emergency"
+ja_term: "救急"
+summary: "Ambulance, urgent advice, and finding a hospital in your language."
+last_verified: "2026-07-10"
+numbers:
+  - number: "119"
+    tel: "119"
+    label: "Ambulance / Fire"
+    note: "24 hours. Interpretation in English, Chinese, Korean, Portuguese, Spanish."
+  - number: "#7119"
+    tel: "%237119"
+    label: "Not sure if you need an ambulance?"
+    note: "Emergency consultation, 24 hours. If it does not connect: 03-3212-2323 (23 wards)."
+  - number: "03-5285-8181"
+    tel: "0352858181"
+    label: "Himawari — find a hospital"
+    note: "Every day 9:00–20:00. English, Chinese, Korean, Thai, Spanish."
+official_links:
+  - label: "How to call an ambulance — step by step"
+    url: "https://www.hokeniryo.metro.tokyo.lg.jp/iryo/iryo_hoken/medical_info_eng/emergency_call"
+    publisher: "Tokyo Metropolitan Government, Bureau of Social Welfare and Public Health"
+    verified: "2026-07-10"
+  - label: "Tokyo EMS Guide — check your symptoms"
+    url: "https://www.tfd.metro.tokyo.lg.jp/hp-kyuuimuka/en_guide/main/index.html"
+    publisher: "Tokyo Fire Department (東京消防庁)"
+    verified: "2026-07-10"
+  - label: "Himawari medical information service"
+    url: "https://www.hokeniryo.metro.tokyo.lg.jp/iryo/iryo_hoken/medical_info_eng/himawari"
+    publisher: "Tokyo Metropolitan Government, Bureau of Social Welfare and Public Health"
+    verified: "2026-07-10"
+  - label: "Tokyo Medical Information Site for Foreign Residents"
+    url: "https://www.hokeniryo.metro.tokyo.lg.jp/iryo/iryo_hoken/medical_info_eng"
+    publisher: "Tokyo Metropolitan Government, Bureau of Social Welfare and Public Health"
+    verified: "2026-07-10"
+---
+
+**When you call 119, say:** "Kyūkyū desu" (救急です — it's a medical emergency), then your **address**, the **symptoms**, and the person's **age**. An interpreter can join the call.

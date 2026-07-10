@@ -1,0 +1,94 @@
+# UI strings. All human-visible template text lives here so that
+# adding a language (やさしい日本語, 中文, Tiếng Việt, नेपाली) never touches templates.
+whatDoYouNeed:
+  other: "What do you need?"
+notGovernment:
+  other: "We are not the government. We take you to the official sources, fast."
+whoNeeds:
+  other: "Who needs this"
+steps:
+  other: "Steps"
+whatToBring:
+  other: "What to bring"
+whereToGo:
+  other: "Where to go"
+officialLinks:
+  other: "Official links"
+lastVerified:
+  other: "Last verified"
+verifiedOn:
+  other: "verified"
+selectYourWard:
+  other: "Select your ward"
+yourWard:
+  other: "Your ward"
+changeWard:
+  other: "Change"
+wardNotListed:
+  other: "Ward pages are being added. If yours is not listed yet, use your ward office's official website."
+comingSoon:
+  other: "Coming soon"
+inYourWard:
+  other: "In your ward"
+noWardSelected:
+  other: "Select your ward above to see your local counter."
+officialSite:
+  other: "Official English website"
+foreignDesk:
+  other: "Consultation desk for foreign residents"
+garbageGuide:
+  other: "Garbage sorting guide (English)"
+wardOffice:
+  other: "Ward office"
+openInMaps:
+  other: "Open in Google Maps"
+languagesLabel:
+  other: "Languages"
+hoursLabel:
+  other: "Hours"
+phoneLabel:
+  other: "Phone"
+addressLabel:
+  other: "Address"
+movingInPage:
+  other: "Moving-in procedures page"
+aboutThisSite:
+  other: "About this site"
+disclaimer:
+  other: "Disclaimer & link policy"
+independentGuide:
+  other: "Independent guide for foreign residents"
+runBy:
+  other: "Run by"
+allProcedures:
+  other: "All procedures"
+backToHome:
+  other: "Home"
+onThisPage:
+  other: "On this page"
+commonQuestions:
+  other: "Common questions"
+whatsNext:
+  other: "What's next"
+deadlineLabel:
+  other: "Deadline"
+costLabel:
+  other: "Cost"
+placeLabel:
+  other: "Where"
+otherWards:
+  other: "Other wards"
+proceduresHere:
+  other: "Procedures you will do at this office"
+pickYourWard:
+  other: "Pick your ward"
+missionLine:
+  other: "The shortest route to the official sources — for everyone starting a life in Tokyo."
+helpInLanguage:
+  other: "Help in your language"
+glossaryTitle:
+  other: "Words you will see"
+showAtCounter:
+  other: "Show this at the counter"
+sourceNote:
+  other: "Every link below goes to an official source. We show the domain so you can check it yourself."
