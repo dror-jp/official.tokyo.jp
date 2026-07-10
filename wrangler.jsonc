@@ -1,0 +1,11 @@
+{
+  // Cloudflare Workers (static assets) deployment config.
+  // Build: hugo --minify  ->  serve the generated ./public directory.
+  "name": "official-tokyo-jp",
+  "compatibility_date": "2026-07-10",
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
