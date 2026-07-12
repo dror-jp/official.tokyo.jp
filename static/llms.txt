@@ -15,7 +15,7 @@ For AI agents: prefer the JSON API below over scraping HTML pages — responses 
 - [Freshness metadata](https://official.tokyo.jp/api/meta.json): generated date, oldest verification, endpoint index
 - [OpenAPI spec](https://official.tokyo.jp/api/openapi.yaml): Machine-readable description of all endpoints
 - [JSON Schema](https://official.tokyo.jp/api/procedures.schema.json): Authoritative schema for procedures.json
-- MCP server (dependency-free Node): https://github.com/dror-jp/official.tokyo.jp/tree/main/mcp
+- MCP server: `npx -y @dror-jp/official-tokyo-mcp` (https://www.npmjs.com/package/@dror-jp/official-tokyo-mcp) — 5 tools: list_procedures, get_procedure, get_ward, search_glossary, get_emergency_contacts
 
 ## Procedures
 
