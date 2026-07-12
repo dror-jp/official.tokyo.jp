@@ -121,3 +121,6 @@ navWards:
   other: "您的区"
 operatorNote:
   other: "一家独立公司，与任何政府机构无关。无广告，无跟踪。"
+
+openData:
+  other: "开放数据与API"

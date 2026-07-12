@@ -119,3 +119,6 @@ operatorNote:
   other: "独立した会社です。政府とは 関係ありません。広告なし・追跡なし。"
 aiTranslated:
   other: "このページは AIが英語から翻訳しました。ちがいがあるときは 英語のページが正しいです。"
+
+openData:
+  other: "オープンデータとAPI"
