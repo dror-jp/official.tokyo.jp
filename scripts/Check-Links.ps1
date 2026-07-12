@@ -24,7 +24,7 @@ $urls = $urls | Where-Object {
 # Sites that block datacenter IPs (403 from CI runners, fine from residential
 # connections). A 403 from these is a warning, not a failure — but any other
 # error still fails, so we don't go blind to real link rot there.
-$botBlockedHosts = @("www.tepco.co.jp")
+$botBlockedHosts = @("www.tepco.co.jp", "www.npmjs.com")
 
 Write-Output "Checking $($urls.Count) unique external URLs..."
 $failed = @()
