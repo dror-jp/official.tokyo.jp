@@ -1,4 +1,4 @@
-# official-tokyo MCP server
+# @dror-jp/official-tokyo-mcp
 
 A dependency-free [Model Context Protocol](https://modelcontextprotocol.io/) server
 that gives AI agents direct, verified answers about official procedures in Tokyo —
@@ -6,6 +6,25 @@ instead of searching and scraping.
 
 Data comes from the free API at https://official.tokyo.jp/api/ (CC BY 4.0, cached
 for 1 hour). Every response carries the site's disclaimer and `last_verified` dates.
+official.tokyo.jp is an independent, non-government guide run by
+[DroR Corporation](https://dror.co.jp); if anything differs from an official page,
+the official page is correct.
+
+## Setup
+
+Requires Node.js 18+.
+
+```jsonc
+// Claude Desktop / Claude Code / any MCP client
+{
+  "mcpServers": {
+    "official-tokyo": {
+      "command": "npx",
+      "args": ["-y", "@dror-jp/official-tokyo-mcp"]
+    }
+  }
+}
+```
 
 ## Tools
 
@@ -17,24 +36,15 @@ for 1 hour). Every response carries the site's disclaimer and `last_verified` da
 | `search_glossary(query)` | Japanese terms from official documents, explained |
 | `get_emergency_contacts()` | 119, #7119, TMC Navi and verified emergency pages |
 
-## Usage
+## Local development
 
-Requires Node.js 18+ (uses global `fetch`).
-
-```jsonc
-// Claude Desktop / Claude Code configuration
-{
-  "mcpServers": {
-    "official-tokyo": {
-      "command": "node",
-      "args": ["/path/to/mcp/server.mjs"]
-    }
-  }
-}
-```
-
-Local development against a built site:
+Run against a locally built copy of the site:
 
 ```
 node server.mjs --data ../public/api
 ```
+
+## License
+
+MIT (server code). The data it serves is CC BY 4.0 —
+attribution: *official.tokyo.jp (DroR Corporation)*.

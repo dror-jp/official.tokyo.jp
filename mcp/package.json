@@ -1,0 +1,38 @@
+{
+  "name": "@dror-jp/official-tokyo-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for official.tokyo.jp — human-verified data on official procedures in Tokyo for foreign residents (resident registration, health insurance, wards, emergencies). Independent project, not a government service. Data CC BY 4.0.",
+  "type": "module",
+  "bin": {
+    "official-tokyo-mcp": "server.mjs"
+  },
+  "files": [
+    "server.mjs",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "mcp-server",
+    "tokyo",
+    "japan",
+    "civic-tech",
+    "open-data",
+    "foreign-residents"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dror-jp/official.tokyo.jp.git",
+    "directory": "mcp"
+  },
+  "homepage": "https://official.tokyo.jp",
+  "bugs": "https://github.com/dror-jp/official.tokyo.jp/issues",
+  "author": "DroR Corporation (https://dror.co.jp)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
