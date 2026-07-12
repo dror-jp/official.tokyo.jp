@@ -6,6 +6,7 @@ summary: "Everyone living in Japan aged 20–59 must join, any nationality. Empl
 category: "money-tax"
 who: "All residents of Japan aged 20–59, regardless of nationality. Company employees are covered automatically through their employer (Employees' Pension). Self-employed people, students and the unemployed enroll themselves."
 deadline: "Within 14 days"
+deadline_days: 14
 cost: "Exemptions possible"
 place: "Your ward office (if not employed)"
 steps:

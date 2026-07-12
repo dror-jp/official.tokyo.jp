@@ -6,6 +6,8 @@ summary: "Your residence card must show your current address — but there is no
 category: "moving-in"
 who: "Mid- to long-term residents (residence card holders) and special permanent residents who moved in or changed address. Required within 14 days."
 deadline: "Within 14 days of moving"
+deadline_days: 14
+deadline_after: "move_in"
 cost: "Free"
 place: "Your ward office"
 next:

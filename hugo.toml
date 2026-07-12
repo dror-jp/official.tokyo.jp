@@ -43,6 +43,44 @@ disableKinds = ["taxonomy", "term"]
     baseName = "wards"
     isPlainText = true
     notAlternative = true
+  [outputFormats.ProceduresJSON]
+    mediaType = "application/json"
+    baseName = "procedures"
+    isPlainText = true
+    notAlternative = true
+  [outputFormats.GlossaryJSON]
+    mediaType = "application/json"
+    baseName = "glossary"
+    isPlainText = true
+    notAlternative = true
+  [outputFormats.EmergencyJSON]
+    mediaType = "application/json"
+    baseName = "emergency"
+    isPlainText = true
+    notAlternative = true
+  [outputFormats.MetaJSON]
+    mediaType = "application/json"
+    baseName = "meta"
+    isPlainText = true
+    notAlternative = true
+  [outputFormats.LlmsFull]
+    mediaType = "text/plain"
+    baseName = "llms-full"
+    isPlainText = true
+    notAlternative = true
+  [outputFormats.MD]
+    mediaType = "text/markdown"
+    baseName = "index"
+    isPlainText = true
+    notAlternative = true
+[mediaTypes]
+  [mediaTypes."text/markdown"]
+    suffixes = ["md"]
+
+[outputs]
+  home = ["HTML", "RSS", "LlmsFull", "MD"]
+  section = ["HTML", "MD"]
+  page = ["HTML", "MD"]
 
 [markup]
   [markup.goldmark]

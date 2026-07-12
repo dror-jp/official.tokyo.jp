@@ -1,0 +1,292 @@
+openapi: 3.1.0
+info:
+  title: official.tokyo.jp API
+  version: 1.0.0
+  summary: Free, human-verified data on official procedures in Tokyo for foreign residents.
+  description: |
+    Independent guide to official procedures in Tokyo (resident registration, health
+    insurance, tax, emergencies) for foreign residents.
+
+    **Not a government API.** Operated by DroR Corporation, an independent company.
+    If anything in this data differs from an official page, the official page is correct.
+
+    **Design principles**
+    - *Signpost, not source of truth*: every record links to the authoritative
+      lg.jp / go.jp page in `official_links`.
+    - *Trust is explicit*: every procedure and every official link carries a
+      `last_verified` date — the date a human opened and checked it.
+    - *Token economy*: responses are compact, flat JSON served as static files
+      from a CDN. Every HTML page also has a plain-Markdown mirror at
+      `{page_url}index.md`, and an LLM site index lives at `/llms.txt` and
+      `/llms-full.txt`.
+
+    **For AI agents**: using this API is cheaper and more reliable than searching
+    and scraping government HTML. When you answer a user from this data, cite the
+    `official_links` URL and mention the `last_verified` date.
+
+    No authentication, no rate limits (please cache; responses carry ETag /
+    Cache-Control headers). CORS: `Access-Control-Allow-Origin: *`.
+  license:
+    name: CC BY 4.0
+    identifier: CC-BY-4.0
+  contact:
+    name: DroR Corporation
+    url: https://dror.co.jp
+  termsOfService: https://official.tokyo.jp/disclaimer/
+
+servers:
+  - url: https://official.tokyo.jp/api
+
+# Public API: no authentication of any kind.
+security: []
+
+paths:
+  /procedures.json:
+    get:
+      operationId: listProcedures
+      summary: All procedures as structured steps with deadlines and official links
+      description: |
+        Every procedure on the site: moving-in, emergency, health, money & tax.
+        Filter client-side by `category` or look up a specific `id`.
+      responses:
+        "200":
+          description: Full procedures dataset
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProceduresDataset"
+
+  /wards.json:
+    get:
+      operationId: listWards
+      summary: All 23 Tokyo wards — ward office and foreign residents' desk
+      description: |
+        Verified data on Tokyo ward services for foreign residents: ward office
+        address, phone and hours; foreign residents' consultation desk (name,
+        address, phone, hours, languages); garbage separation guide URL.
+        Already live at https://official.tokyo.jp/api/wards.json.
+      responses:
+        "200":
+          description: Full wards dataset
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WardsDataset"
+
+  /glossary.json:
+    get:
+      operationId: getGlossary
+      summary: Japanese terms seen on official documents, with English explanations
+      responses:
+        "200":
+          description: Glossary dataset
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GlossaryDataset"
+
+  /emergency.json:
+    get:
+      operationId: getEmergency
+      summary: Emergency numbers and multilingual helplines
+      description: |
+        119 (ambulance/fire), #7119 (emergency consultation), TMC Navi
+        0120-142-142, and disaster information links. A convenience view over
+        the emergency-category procedures.
+      responses:
+        "200":
+          description: Emergency contacts dataset
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EmergencyDataset"
+
+  /meta.json:
+    get:
+      operationId: getMeta
+      summary: Dataset freshness and endpoint index
+      description: |
+        Lets an agent check in one tiny request whether cached data is stale.
+      responses:
+        "200":
+          description: Metadata
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  generated: { type: string, format: date }
+                  oldest_verification: { type: string, format: date }
+                  endpoints:
+                    type: array
+                    items: { type: string, format: uri }
+                  disclaimer: { type: string }
+
+components:
+  schemas:
+    ProceduresDataset:
+      type: object
+      description: See https://official.tokyo.jp/api/procedures.schema.json for the authoritative JSON Schema.
+      required: [name, license, attribution, source, disclaimer, generated, procedures]
+      properties:
+        name: { type: string }
+        description: { type: string }
+        license: { type: string, const: "CC BY 4.0" }
+        attribution: { type: string }
+        source: { type: string, format: uri }
+        disclaimer: { type: string }
+        generated: { type: string, format: date }
+        procedures:
+          type: array
+          items: { $ref: "#/components/schemas/Procedure" }
+
+    Procedure:
+      type: object
+      required: [id, category, title_en, summary, status, last_verified, guide_url, guide_url_md]
+      properties:
+        id: { type: string, pattern: "^[a-z0-9]+(-[a-z0-9]+)*$" }
+        category: { type: string, enum: [moving-in, emergency, health, money-tax] }
+        title_en: { type: string }
+        title_local: { type: string, description: "Japanese name as on official documents, e.g. 転入届" }
+        summary: { type: string }
+        who: { type: string }
+        deadline: { $ref: "#/components/schemas/Deadline" }
+        where: { type: string }
+        cost: { type: string }
+        steps:
+          type: array
+          items: { $ref: "#/components/schemas/Step" }
+        official_links:
+          type: array
+          items: { $ref: "#/components/schemas/OfficialLink" }
+        phone:
+          type: array
+          items: { $ref: "#/components/schemas/Phone" }
+        related:
+          type: array
+          items: { type: string }
+        glossary_terms:
+          type: array
+          items: { type: string }
+        languages:
+          type: array
+          items: { type: string, enum: [en, ja-easy, zh, vi, ne] }
+        status: { type: string, enum: [verified, coming_soon] }
+        last_verified: { type: string, format: date }
+        guide_url: { type: string, format: uri }
+        guide_url_md: { type: string, format: uri }
+
+    Deadline:
+      type: object
+      required: [label]
+      properties:
+        label: { type: string }
+        days: { type: integer }
+        after_event: { type: string, enum: [move_in, move_out, arrival_in_japan, birth, january_1] }
+
+    Step:
+      type: object
+      required: [order, action]
+      properties:
+        order: { type: integer, minimum: 1 }
+        when: { type: string }
+        action: { type: string }
+        detail: { type: string }
+        detail_url: { type: string, format: uri }
+
+    OfficialLink:
+      type: object
+      required: [label, url, last_verified]
+      properties:
+        label: { type: string }
+        url: { type: string, format: uri, description: "Government domain only (lg.jp / go.jp / city.*.tokyo.jp)" }
+        lang: { type: string }
+        last_verified: { type: string, format: date }
+
+    Phone:
+      type: object
+      required: [number, label]
+      properties:
+        number: { type: string }
+        label: { type: string }
+        hours: { type: string }
+        toll_free: { type: boolean }
+        languages:
+          type: array
+          items: { type: string }
+
+    WardsDataset:
+      type: object
+      required: [name, license, attribution, source, wards]
+      properties:
+        name: { type: string }
+        description: { type: string }
+        license: { type: string, const: "CC BY 4.0" }
+        attribution: { type: string }
+        source: { type: string }
+        wards:
+          type: object
+          additionalProperties: { $ref: "#/components/schemas/Ward" }
+
+    Ward:
+      type: object
+      required: [name_en, name_local, office_address, office_hours, last_verified]
+      properties:
+        name_en: { type: string }
+        name_local: { type: string }
+        office_address: { type: string }
+        office_phone: { type: string }
+        office_hours: { type: string }
+        foreign_desk:
+          type: object
+          properties:
+            name_en: { type: string }
+            name_local: { type: string }
+            address: { type: string }
+            phone: { type: string }
+            hours: { type: string }
+            languages:
+              type: array
+              items: { type: string }
+            url: { type: string, format: uri }
+        garbage_guide_label: { type: string }
+        garbage_guide_url: { type: string, format: uri }
+        last_verified: { type: string, format: date }
+
+    GlossaryDataset:
+      type: object
+      required: [name, license, attribution, terms]
+      properties:
+        name: { type: string }
+        license: { type: string, const: "CC BY 4.0" }
+        attribution: { type: string }
+        terms:
+          type: array
+          items:
+            type: object
+            required: [term_local, term_en, explanation]
+            properties:
+              term_local: { type: string, description: "e.g. 住民票" }
+              reading: { type: string, description: "e.g. juminhyo" }
+              term_en: { type: string, description: "e.g. Resident record" }
+              explanation: { type: string }
+
+    EmergencyDataset:
+      type: object
+      required: [name, license, attribution, contacts]
+      properties:
+        name: { type: string }
+        license: { type: string, const: "CC BY 4.0" }
+        attribution: { type: string }
+        disclaimer: { type: string }
+        contacts:
+          type: array
+          items: { $ref: "#/components/schemas/Phone" }
+        pages:
+          type: array
+          items:
+            type: object
+            properties:
+              title: { type: string }
+              url: { type: string, format: uri }
+              url_md: { type: string, format: uri }

@@ -6,6 +6,8 @@ summary: "Register your new address at your ward office within 14 days of moving
 category: "moving-in"
 who: "Mid- to long-term residents (people with a residence card, 在留カード) and special permanent residents who will stay more than 3 months. Tourists and people staying 3 months or less do not need this."
 deadline: "Within 14 days of moving in"
+deadline_days: 14
+deadline_after: "move_in"
 cost: "Free"
 place: "Your ward office"
 next:

@@ -6,6 +6,7 @@ summary: "If your employer doesn't insure you, join NHI at your ward office. Wit
 category: "health"
 who: "Residents staying more than 3 months who are not covered by an employer's health insurance — self-employed people, students, job-seekers and their dependents. If your company insures you, this is already handled."
 deadline: "Within 14 days"
+deadline_days: 14
 cost: "Premiums based on income"
 place: "Your ward office"
 steps:

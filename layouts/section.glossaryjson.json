@@ -1,0 +1,21 @@
+{{- $terms := slice -}}
+{{- range hugo.Data.glossary.terms -}}
+  {{- $t := dict
+      "term_local" .ja_word
+      "reading" .romaji
+      "term_en" .term_en
+      "explanation" .en
+      "explanations" (dict "ja-easy" .ja "zh" .zh "vi" .vi "ne" .ne)
+  -}}
+  {{- $terms = $terms | append $t -}}
+{{- end -}}
+{{- $out := dict
+      "name" "official.tokyo.jp glossary"
+      "description" "Japanese terms you will see on official documents in Tokyo, explained in plain English (with やさしい日本語, 简体中文, Tiếng Việt and नेपाली explanations)."
+      "license" "CC BY 4.0"
+      "attribution" "official.tokyo.jp (DroR Corporation)"
+      "source" (printf "%sglossary/" site.BaseURL)
+      "generated" (now.Format "2006-01-02")
+      "terms" $terms
+-}}
+{{- $out | jsonify (dict "indent" "  ") -}}

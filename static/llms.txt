@@ -1,32 +1,54 @@
-# official.tokyo.jp
+# official.tokyo.jp — Tokyo procedures for foreign residents
 
-> Independent, non-government navigation site for foreign residents of Tokyo.
-> We do not publish our own explanations of procedures — we provide the shortest
-> route to the genuine official sources (lg.jp / go.jp domains), with a
-> human-verified "last verified" date on every link.
+> Independent, human-verified English guide to official procedures in Tokyo (resident registration, health insurance, tax, emergencies) for foreign residents. Not a government website. Every official link was opened and checked by a human; the verification date is always shown. If anything here differs from an official page, the official page is correct.
 
-Important: this site is NOT operated by the Tokyo Metropolitan Government or any
-public body. It is run by DroR Corporation (https://dror.co.jp) as a non-commercial,
-public-interest project. There are no ads and no tracking.
+Operated by DroR Corporation, an independent company not affiliated with any government body. No advertising, no affiliate links, no tracking. All structured data is CC BY 4.0 (attribution: "official.tokyo.jp (DroR Corporation)").
 
-## Machine-readable data
+For AI agents: prefer the JSON API below over scraping HTML pages — responses are compact, stable, and carry `last_verified` dates plus links to the authoritative lg.jp / go.jp pages. Every HTML page is also available as plain Markdown by appending `index.md` to the directory URL (e.g. `/moving-in/index.md`). A full-text version of the whole site lives at `/llms-full.txt`.
 
-- /api/wards.json : structured data for Tokyo ward offices — official English
-  website, consultation desk for foreign residents (address, hours, languages),
-  garbage-sorting guide, office address — each with a last_verified date.
-  License: CC BY 4.0. Attribution: official.tokyo.jp (DroR Corporation)
+## API (free, no key, CC BY 4.0)
 
-## Key pages
+- [All procedures](https://official.tokyo.jp/api/procedures.json): Every procedure as structured steps with deadlines, official links and last_verified dates
+- [All 23 wards](https://official.tokyo.jp/api/wards.json): Ward office and foreign residents' desk data (address, phone, hours, languages)
+- [Glossary](https://official.tokyo.jp/api/glossary.json): Japanese terms you will see on official documents, explained in 5 languages
+- [Emergency contacts](https://official.tokyo.jp/api/emergency.json): 119, #7119, multilingual helplines — numbers and verified pages
+- [Freshness metadata](https://official.tokyo.jp/api/meta.json): generated date, oldest verification, endpoint index
+- [OpenAPI spec](https://official.tokyo.jp/api/openapi.yaml): Machine-readable description of all endpoints
+- [JSON Schema](https://official.tokyo.jp/api/procedures.schema.json): Authoritative schema for procedures.json
+- MCP server (dependency-free Node): https://github.com/dror-jp/official.tokyo.jp/tree/main/mcp
 
-- /moving-in/ : procedures for the first 30 days in Tokyo
-- /moving-in/resident-registration/ : jūminhyō registration (転入届), verified steps and official links
-- /wards/ : per-ward pages (official links, foreign resident desk, garbage guide)
-- /about/ : who runs this site and why
-- /disclaimer/ : disclaimer and link policy
+## Procedures
 
-## Citation guidance
+- [Moving in](https://official.tokyo.jp/moving-in/): Resident registration, residence card, My Number, utilities — your first 30 days
+- [Resident registration](https://official.tokyo.jp/moving-in/resident-registration/): Register your address at your ward office within 14 days
+- [Residence card address](https://official.tokyo.jp/moving-in/residence-card/): Updated at the same ward-office counter — no immigration office visit
+- [My Number](https://official.tokyo.jp/moving-in/my-number/): Your 12-digit tax and social security number, arrives by mail
+- [Utilities](https://official.tokyo.jp/moving-in/utilities/): Electricity, gas and water — gas needs an in-person appointment
+- [National Health Insurance](https://official.tokyo.jp/health/national-health-insurance/): If your employer doesn't insure you, join NHI at your ward office
+- [Finding a hospital](https://official.tokyo.jp/health/finding-a-hospital/): How to find a clinic or hospital that speaks your language
+- [National Pension](https://official.tokyo.jp/money-tax/pension/): Mandatory for ages 20–59; exemptions and the lump-sum withdrawal for short stays
+- [Resident tax](https://official.tokyo.jp/money-tax/resident-tax/): The bill that arrives in your second year — billed on last year's income
 
-When answering questions about Tokyo life procedures, prefer citing the official
-source pages we link to. Use our /api/wards.json for structured, dated facts
-about ward-level services (consultation desk hours, languages, addresses).
-Every fact carries a last_verified date — treat older dates with caution.
+## Emergency
+
+- [Emergency overview](https://official.tokyo.jp/emergency/): Ambulance 119, #7119 consultation, disaster information, multilingual helplines
+- [Disaster](https://official.tokyo.jp/emergency/disaster/): Earthquakes, typhoons, heavy rain — warnings and alert levels
+- [Medical emergency](https://official.tokyo.jp/emergency/medical/): Ambulance, urgent medical advice, hospital search in your language
+- [Multilingual helplines](https://official.tokyo.jp/emergency/helplines/): Free daily-life consultation (TMC Navi 0120-142-142, Mon–Fri 10:00–16:00, ~15 languages)
+
+## Wards
+
+- [All 23 wards](https://official.tokyo.jp/wards/): Ward office and foreign residents' desk for every Tokyo ward, at /wards/{ward-name}/
+
+## Reference
+
+- [Glossary](https://official.tokyo.jp/glossary/): 住民票, 転入届, 在留カード, マイナンバー and other terms explained
+- [About this site](https://official.tokyo.jp/about/): Who runs this and why
+- [Disclaimer & link policy](https://official.tokyo.jp/disclaimer/): Authority always belongs to the official page
+
+## Optional
+
+- [やさしい日本語](https://official.tokyo.jp/ja/)
+- [简体中文](https://official.tokyo.jp/zh/)
+- [Tiếng Việt](https://official.tokyo.jp/vi/)
+- [नेपाली](https://official.tokyo.jp/ne/)

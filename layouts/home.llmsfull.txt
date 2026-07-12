@@ -1,0 +1,36 @@
+# official.tokyo.jp — full text for LLMs
+# Independent, human-verified guide to official procedures in Tokyo for foreign residents.
+# NOT a government website. Operated by DroR Corporation (https://dror.co.jp), non-commercial.
+# If anything here differs from an official page, the official page is correct.
+# License: CC BY 4.0 — attribution: official.tokyo.jp (DroR Corporation)
+# Generated: {{ now.Format "2006-01-02" }} (built from the same source as the HTML site — never hand-synced)
+# JSON API: {{ "api/procedures.json" | absURL }} | {{ "api/wards.json" | absURL }} | {{ "api/glossary.json" | absURL }} | {{ "api/emergency.json" | absURL }}
+
+{{ range partial "api-procedures.html" . }}
+## {{ .title_en }}{{ with .title_local }}（{{ . }}）{{ end }}  [id: {{ .id }}]
+
+{{ .summary }}
+{{ with .who }}Who: {{ . }}
+{{ end }}{{ with .deadline }}Deadline: {{ .label }}
+{{ end }}{{ with .where }}Where: {{ . }}
+{{ end }}{{ with .cost }}Cost: {{ . }}
+{{ end }}{{ with .steps }}Steps:
+{{ range . }}  {{ .order }}. {{ with .when }}[{{ . }}] {{ end }}{{ .action }}{{ with .detail }} — {{ . }}{{ end }}
+{{ end }}{{ end }}{{ with .phone }}Phone:
+{{ range . }}  - {{ .number }} — {{ .label }}{{ with .note }}（{{ . }}）{{ end }}
+{{ end }}{{ end }}{{ with .official_links }}Official links (human-verified):
+{{ range . }}  - {{ .label }}: {{ .url }} (verified {{ .last_verified }})
+{{ end }}{{ end }}Guide: {{ .guide_url }} (Markdown: {{ .guide_url_md }})
+Last verified: {{ .last_verified }}
+{{ end }}
+
+## Glossary — Japanese terms on official documents
+
+{{ range hugo.Data.glossary.terms }}- {{ .ja_word }} ({{ .romaji }} / {{ .term_en }}): {{ .en }}
+{{ end }}
+
+## Tokyo's 23 wards — offices and foreign residents' desks
+
+Full structured data: {{ "api/wards.json" | absURL }}
+{{ range $slug, $w := hugo.Data.wards }}- {{ $w.name_en }}（{{ $w.name_local }}）: office {{ $w.office_address }}{{ with $w.office_phone }}, tel {{ . }}{{ end }}.{{ with $w.foreign_desk }} Foreign residents' desk: {{ .name_en }}{{ with .phone }}, tel {{ . }}{{ end }}{{ with .languages }}, languages: {{ delimit . ", " }}{{ end }}.{{ end }} Guide: {{ printf "wards/%s/index.md" $slug | absURL }} (verified {{ $w.last_verified }})
+{{ end }}

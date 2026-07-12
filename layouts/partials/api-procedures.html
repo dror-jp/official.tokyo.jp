@@ -1,0 +1,116 @@
+{{- /* Builds the procedures list for /api/procedures.json and friends.
+     Single source of truth: EN page front matter. Nothing is hand-copied. */ -}}
+{{- $pages := slice -}}
+{{- range where site.RegularPages "Params.layout" "procedure" }}{{ $pages = $pages | append . }}{{ end -}}
+{{- range where site.RegularPages "Section" "emergency" }}{{ $pages = $pages | append . }}{{ end -}}
+{{- $ids := slice "moving-in-first-30-days" -}}
+{{- range $pages -}}
+  {{- $slug := path.Base .RelPermalink -}}
+  {{- $ids = $ids | append (cond (eq .Section "emergency") (printf "emergency-%s" $slug) $slug) -}}
+{{- end -}}
+
+{{- $procs := slice -}}
+
+{{- /* Composite entry: the first-30-days timeline from the moving-in hub */ -}}
+{{- with site.GetPage "/moving-in" -}}
+  {{- $steps := slice -}}
+  {{- range .Params.api_steps -}}
+    {{- $s := dict "order" .order "when" .when "action" .action -}}
+    {{- with .detail }}{{ $s = merge $s (dict "detail" .) }}{{ end -}}
+    {{- with .path }}{{ $s = merge $s (dict "detail_url" (. | absURL)) }}{{ end -}}
+    {{- $steps = $steps | append $s -}}
+  {{- end -}}
+  {{- $dl := dict "label" .Params.deadline -}}
+  {{- with .Params.deadline_days }}{{ $dl = merge $dl (dict "days" .) }}{{ end -}}
+  {{- with .Params.deadline_after }}{{ $dl = merge $dl (dict "after_event" .) }}{{ end -}}
+  {{- $procs = $procs | append (dict
+      "id" "moving-in-first-30-days"
+      "category" "moving-in"
+      "title_en" "Moving in — your first 30 days"
+      "title_local" (.Params.ja_term | default "")
+      "summary" .Params.summary
+      "who" "Everyone moving into one of Tokyo's 23 wards."
+      "deadline" $dl
+      "where" "Your ward office (区役所) — see /api/wards.json for address, phone and the foreign residents' desk."
+      "steps" $steps
+      "official_links" (slice)
+      "related" (slice "resident-registration" "residence-card" "national-health-insurance" "my-number" "utilities")
+      "languages" (slice "en" "ja-easy" "zh" "vi" "ne")
+      "status" "verified"
+      "last_verified" (.Params.last_verified | default "2026-07-10")
+      "guide_url" .Permalink
+      "guide_url_md" (printf "%sindex.md" .Permalink)
+  ) -}}
+{{- end -}}
+
+{{- range $pages -}}
+  {{- $slug := path.Base .RelPermalink -}}
+  {{- $id := cond (eq .Section "emergency") (printf "emergency-%s" $slug) $slug -}}
+  {{- $p := dict
+      "id" $id
+      "category" .Section
+      "title_en" .Title
+      "summary" (.Params.summary | default "")
+      "status" "verified"
+      "last_verified" (.Params.last_verified | default "")
+      "guide_url" .Permalink
+      "guide_url_md" (printf "%sindex.md" .Permalink)
+  -}}
+  {{- with .Params.ja_term }}{{ $p = merge $p (dict "title_local" .) }}{{ end -}}
+  {{- with .Params.who }}{{ $p = merge $p (dict "who" .) }}{{ end -}}
+  {{- with .Params.place }}{{ $p = merge $p (dict "where" .) }}{{ end -}}
+  {{- with .Params.cost }}{{ $p = merge $p (dict "cost" .) }}{{ end -}}
+  {{- if .Params.deadline -}}
+    {{- $dl := dict "label" .Params.deadline -}}
+    {{- with .Params.deadline_days }}{{ $dl = merge $dl (dict "days" .) }}{{ end -}}
+    {{- with .Params.deadline_after }}{{ $dl = merge $dl (dict "after_event" .) }}{{ end -}}
+    {{- $p = merge $p (dict "deadline" $dl) -}}
+  {{- end -}}
+  {{- if .Params.steps -}}
+    {{- $steps := slice -}}
+    {{- range $i, $s := .Params.steps -}}
+      {{- $st := dict "order" (add $i 1) "action" $s.title -}}
+      {{- with $s.text }}{{ $st = merge $st (dict "detail" .) }}{{ end -}}
+      {{- $steps = $steps | append $st -}}
+    {{- end -}}
+    {{- $p = merge $p (dict "steps" $steps) -}}
+  {{- end -}}
+  {{- if .Params.official_links -}}
+    {{- $links := slice -}}
+    {{- range .Params.official_links -}}
+      {{- $l := dict "label" .label "url" .url "last_verified" .verified -}}
+      {{- with .publisher }}{{ $l = merge $l (dict "publisher" .) }}{{ end -}}
+      {{- $links = $links | append $l -}}
+    {{- end -}}
+    {{- $p = merge $p (dict "official_links" $links) -}}
+  {{- end -}}
+  {{- if .Params.numbers -}}
+    {{- $phones := slice -}}
+    {{- range .Params.numbers -}}
+      {{- $ph := dict "number" .number "label" .label -}}
+      {{- with .note }}{{ $ph = merge $ph (dict "note" .) }}{{ end -}}
+      {{- if hasPrefix .number "0120" }}{{ $ph = merge $ph (dict "toll_free" true) }}{{ end -}}
+      {{- $phones = $phones | append $ph -}}
+    {{- end -}}
+    {{- $p = merge $p (dict "phone" $phones) -}}
+  {{- end -}}
+  {{- if .Params.next -}}
+    {{- $rel := slice -}}
+    {{- range .Params.next -}}
+      {{- $r := path.Base .url -}}
+      {{- if in $ids $r }}{{ $rel = $rel | append $r -}}
+      {{- else if in $ids (printf "emergency-%s" $r) }}{{ $rel = $rel | append (printf "emergency-%s" $r) }}{{ end -}}
+    {{- end -}}
+    {{- with $rel }}{{ $p = merge $p (dict "related" .) }}{{ end -}}
+  {{- end -}}
+  {{- $blob := print .Title " " (.Params.ja_term | default "") " " (.Params.summary | default "") " " (.Params.who | default "") -}}
+  {{- range .Params.steps }}{{ $blob = print $blob " " .title " " .text }}{{ end -}}
+  {{- $terms := slice -}}
+  {{- range hugo.Data.glossary.terms }}{{ if strings.Contains $blob .ja_word }}{{ $terms = $terms | append .ja_word }}{{ end }}{{ end -}}
+  {{- with $terms }}{{ $p = merge $p (dict "glossary_terms" .) }}{{ end -}}
+  {{- $langs := slice -}}
+  {{- range .AllTranslations }}{{ $l := .Language.Lang }}{{ if eq $l "ja" }}{{ $l = "ja-easy" }}{{ end }}{{ $langs = $langs | append $l }}{{ end -}}
+  {{- $p = merge $p (dict "languages" $langs) -}}
+  {{- $procs = $procs | append $p -}}
+{{- end -}}
+{{- return $procs -}}

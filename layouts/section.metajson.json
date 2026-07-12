@@ -1,0 +1,23 @@
+{{- $dates := slice -}}
+{{- range partial "api-procedures.html" . }}{{ with .last_verified }}{{ $dates = $dates | append . }}{{ end }}{{ end -}}
+{{- range $slug, $w := hugo.Data.wards }}{{ with $w.last_verified }}{{ $dates = $dates | append . }}{{ end }}{{ end -}}
+{{- $dates = sort $dates -}}
+{{- $out := dict
+      "name" "official.tokyo.jp API metadata"
+      "generated" (now.Format "2006-01-02")
+      "oldest_verification" (index $dates 0)
+      "endpoints" (slice
+        (printf "%sapi/procedures.json" site.BaseURL)
+        (printf "%sapi/wards.json" site.BaseURL)
+        (printf "%sapi/glossary.json" site.BaseURL)
+        (printf "%sapi/emergency.json" site.BaseURL)
+        (printf "%sapi/openapi.yaml" site.BaseURL)
+        (printf "%sapi/procedures.schema.json" site.BaseURL)
+        (printf "%sllms.txt" site.BaseURL)
+        (printf "%sllms-full.txt" site.BaseURL)
+      )
+      "disclaimer" "official.tokyo.jp is not operated by any government body. If anything in this data differs from an official page, the official page is correct."
+      "license" "CC BY 4.0"
+      "attribution" "official.tokyo.jp (DroR Corporation)"
+-}}
+{{- $out | jsonify (dict "indent" "  ") -}}

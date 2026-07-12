@@ -1,0 +1,22 @@
+{{- $contacts := slice -}}
+{{- $pages := slice -}}
+{{- range where (partial "api-procedures.html" .) "category" "emergency" -}}
+  {{- $guide := .guide_url -}}
+  {{- $lv := .last_verified -}}
+  {{- range .phone | default slice -}}
+    {{- $contacts = $contacts | append (merge . (dict "guide_url" $guide "last_verified" $lv)) -}}
+  {{- end -}}
+  {{- $pages = $pages | append (dict "title" .title_en "url" .guide_url "url_md" .guide_url_md "last_verified" $lv) -}}
+{{- end -}}
+{{- $out := dict
+      "name" "official.tokyo.jp emergency contacts"
+      "description" "Emergency numbers and multilingual helplines for Tokyo: 119, #7119, TMC Navi and disaster information."
+      "license" "CC BY 4.0"
+      "attribution" "official.tokyo.jp (DroR Corporation)"
+      "source" (printf "%semergency/" site.BaseURL)
+      "disclaimer" "official.tokyo.jp is not operated by any government body. If anything here differs from an official page, the official page is correct."
+      "generated" (now.Format "2006-01-02")
+      "contacts" $contacts
+      "pages" $pages
+-}}
+{{- $out | jsonify (dict "indent" "  ") -}}

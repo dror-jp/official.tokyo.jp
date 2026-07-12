@@ -6,6 +6,7 @@ summary: "The local tax that funds your ward. It is billed to whoever lived in J
 category: "money-tax"
 who: "Anyone with a registered address in Japan on January 1 who earned above the taxable threshold in the previous year. The ward where you lived on January 1 is the one that bills you — even if you move later."
 deadline: "Bills arrive in June"
+deadline_after: "january_1"
 cost: "Based on last year's income"
 place: "Via employer, or payment slips"
 steps:

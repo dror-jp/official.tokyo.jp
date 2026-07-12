@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://official.tokyo.jp/api/procedures.schema.json",
+  "title": "official.tokyo.jp procedures dataset",
+  "description": "Structured procedures for foreign residents in Tokyo. Design principles: (1) signpost, not source of truth — every procedure carries official_links to the authoritative lg.jp/go.jp page, and the disclaimer applies to every record; (2) trust is explicit — last_verified is required on every procedure and every official link; (3) token economy — flat structure, short strings, no HTML.",
+  "type": "object",
+  "required": ["name", "description", "license", "attribution", "source", "disclaimer", "generated", "procedures"],
+  "properties": {
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "license": { "type": "string", "const": "CC BY 4.0" },
+    "attribution": { "type": "string" },
+    "source": { "type": "string", "format": "uri" },
+    "disclaimer": {
+      "type": "string",
+      "description": "Must state that this is not a government dataset and that official pages take precedence."
+    },
+    "generated": { "type": "string", "format": "date", "description": "Date this file was built." },
+    "procedures": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/procedure" }
+    }
+  },
+  "$defs": {
+    "procedure": {
+      "type": "object",
+      "required": ["id", "category", "title_en", "summary", "status", "last_verified", "guide_url", "guide_url_md"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+          "description": "Stable slug. Never reuse or rename; agents cache these."
+        },
+        "category": {
+          "type": "string",
+          "enum": ["moving-in", "emergency", "health", "money-tax"]
+        },
+        "title_en": { "type": "string" },
+        "title_local": { "type": "string", "description": "Japanese name as it appears on official documents, e.g. 転入届." },
+        "summary": { "type": "string", "description": "One or two plain-English sentences. Aim for under 200 characters." },
+        "who": { "type": "string", "description": "Who this applies to, e.g. 'Everyone moving into a Tokyo ward'." },
+        "deadline": { "$ref": "#/$defs/deadline" },
+        "where": { "type": "string", "description": "Where the procedure happens, e.g. 'Your ward office (区役所)'." },
+        "cost": { "type": "string", "description": "Plain-language cost, e.g. 'Free', '30% of medical costs at the counter'." },
+        "steps": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/step" },
+          "description": "3–5 steps, matching the site's editorial rule."
+        },
+        "official_links": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/official_link" },
+          "description": "Authoritative government pages (lg.jp / go.jp). Populated ONLY from the human-verified link database — never add a link that has not been opened and checked."
+        },
+        "phone": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/phone" },
+          "description": "For emergency/helpline entries."
+        },
+        "related": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "IDs of related procedures."
+        },
+        "glossary_terms": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Japanese terms from /api/glossary.json that appear in this procedure."
+        },
+        "languages": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["en", "ja-easy", "zh", "vi", "ne"] },
+          "description": "Languages the guide page is available in."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["verified", "coming_soon"],
+          "description": "coming_soon entries exist so agents know the topic is tracked but not yet human-verified."
+        },
+        "last_verified": {
+          "type": "string",
+          "format": "date",
+          "description": "Date a human last opened and checked every link in this record."
+        },
+        "guide_url": { "type": "string", "format": "uri", "description": "Human-readable page on official.tokyo.jp." },
+        "guide_url_md": { "type": "string", "format": "uri", "description": "Plain-Markdown mirror of guide_url — cheaper for agents to fetch." }
+      }
+    },
+    "deadline": {
+      "type": "object",
+      "required": ["label"],
+      "properties": {
+        "label": { "type": "string", "description": "Human-readable, e.g. 'Within 14 days of moving in'." },
+        "days": { "type": "integer", "description": "Machine-readable number of days, if applicable." },
+        "after_event": {
+          "type": "string",
+          "enum": ["move_in", "move_out", "arrival_in_japan", "birth", "january_1"],
+          "description": "The event the deadline counts from."
+        }
+      }
+    },
+    "step": {
+      "type": "object",
+      "required": ["order", "action"],
+      "properties": {
+        "order": { "type": "integer", "minimum": 1 },
+        "when": { "type": "string", "description": "Timing label, e.g. 'Before you move', 'Within 14 days'." },
+        "action": { "type": "string", "description": "Imperative, one sentence." },
+        "detail": { "type": "string", "description": "Optional clarification, one sentence." },
+        "detail_url": { "type": "string", "format": "uri", "description": "official.tokyo.jp page with the full step guide." }
+      }
+    },
+    "official_link": {
+      "type": "object",
+      "required": ["label", "url", "last_verified"],
+      "properties": {
+        "label": { "type": "string" },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Must be a government domain (lg.jp, go.jp, metro.tokyo.lg.jp, city.*.tokyo.jp)."
+        },
+        "lang": { "type": "string", "description": "Language of the target page, e.g. 'en', 'ja'." },
+        "last_verified": { "type": "string", "format": "date" }
+      }
+    },
+    "phone": {
+      "type": "object",
+      "required": ["number", "label"],
+      "properties": {
+        "number": { "type": "string", "description": "As dialed, e.g. '119', '#7119', '0120-142-142'." },
+        "label": { "type": "string" },
+        "hours": { "type": "string", "description": "e.g. '24 hours', 'Mon–Fri 10:00–16:00'." },
+        "toll_free": { "type": "boolean" },
+        "languages": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{{- $out := dict
+      "name" "official.tokyo.jp procedures"
+      "description" "Verified procedures for foreign residents in Tokyo, as structured steps with deadlines and official links."
+      "license" "CC BY 4.0"
+      "attribution" "official.tokyo.jp (DroR Corporation)"
+      "source" site.BaseURL
+      "disclaimer" "official.tokyo.jp is not operated by any government body. If anything in this dataset differs from an official page, the official page is correct. Every official link was opened and checked by a human on the date shown in last_verified."
+      "generated" (now.Format "2006-01-02")
+      "schema" (printf "%sapi/procedures.schema.json" site.BaseURL)
+      "procedures" (partial "api-procedures.html" .)
+-}}
+{{- $out | jsonify (dict "indent" "  ") -}}

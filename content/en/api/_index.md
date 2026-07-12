@@ -1,4 +1,4 @@
 ---
-title: "Ward data"
-outputs: ["WardsJSON"]
+title: "API"
+outputs: ["WardsJSON", "ProceduresJSON", "GlossaryJSON", "EmergencyJSON", "MetaJSON"]
 ---

@@ -10,6 +10,23 @@ human last verified every link.
 > Run by [DroR Corporation](https://dror.co.jp) (株式会社DroR) as a non-commercial,
 > public-interest project. No ads, no tracking.
 
+## For AI agents
+
+Using the free API is cheaper and more reliable than searching and scraping:
+
+- **`/api/procedures.json`** — every procedure as structured steps with deadlines and
+  human-verified official links ([schema](https://official.tokyo.jp/api/procedures.schema.json))
+- **`/api/wards.json`** — all 23 wards' offices and foreign residents' desks
+- **`/api/glossary.json`**, **`/api/emergency.json`**, **`/api/meta.json`** (freshness check)
+- **[OpenAPI spec](https://official.tokyo.jp/api/openapi.yaml)** — no auth, no rate limits, CORS `*`
+- Every HTML page has a plain-Markdown mirror at `{page_url}index.md`;
+  site indexes for LLMs live at [`/llms.txt`](https://official.tokyo.jp/llms.txt) and
+  [`/llms-full.txt`](https://official.tokyo.jp/llms-full.txt)
+- **[MCP server](mcp/)** — dependency-free Node server exposing the data as tools
+
+All of it is generated at build time from the same source files as the site itself —
+the API can never drift from the pages.
+
 ## Open data
 
 - **`data/wards.yaml`** — verified data for all 23 Tokyo wards: official English pages,
