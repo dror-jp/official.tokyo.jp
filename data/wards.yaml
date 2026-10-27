@@ -20,7 +20,7 @@ nakano:
     languages_note: "Staff support in English/Chinese/Japanese; tablet interpretation adds about 13 more languages."
     phone: "03-3228-8929"
     url: "https://www.city.tokyo-nakano.lg.jp/kurashi/gaikoku/gaikokuzinsoudan.html"
-  garbage_guide_url: "https://www.city.tokyo-nakano.lg.jp/kurashi/gomi/dashikata/leaflet.files/nakanoGomi_2025_en.pdf"
+  garbage_guide_url: "https://www.city.tokyo-nakano.lg.jp/kurashi/gomi/dashikata/leaflet.files/nakanoGomi_2026_en.pdf"
   garbage_guide_label: "How to Separate and Dispose Recyclable Materials (PDF, English)"
   garbage_guide_page_url: "https://www.city.tokyo-nakano.lg.jp/kurashi/gomi/dashikata/leaflet.html"
   office_address: "4-11-19 Nakano, Nakano-ku, Tokyo 164-8501"
@@ -85,7 +85,7 @@ shinagawa:
     name_en: "Advisory Services for Foreign Residents (Residents' Consulting Office)"
     name_local: "品川区外国人生活相談（区民相談室）"
     address: "Third Building 3F, 2-1-36 Hiromachi, Shinagawa-ku, Tokyo"
-    hours: "English: 2nd & 4th Tuesday 9:00–17:00; Chinese: 2nd & 4th Thursday 9:00–17:00"
+    hours: "English: 2nd Tuesday 9:00–17:00; Chinese: 2nd & 4th Thursday 9:00–17:00"
     languages: ["English", "Chinese"]
     languages_note: "Only on the specific days above — for other times and languages, use the Tokyo Multilingual Consultation Navi (0120-142-142)."
     phone: "03-3777-2000"
@@ -107,7 +107,7 @@ shinjuku:
     name_en: "Shinjuku Multicultural Plaza / Consultation Support Center for Foreign Residents"
     name_local: "しんじゅく多文化共生プラザ（外国人総合相談支援センター）"
     address: "Hygeia 11F, 2-44-1 Kabuki-cho, Shinjuku-ku, Tokyo 160-0021"
-    hours: "Plaza: 9:00–21:00 (closed 2nd & 4th Wed, year-end holidays). Consultation center: Mon–Fri 9:00–16:00"
+    hours: "Plaza: 9:00–21:00 (closed 2nd & 4th Wed, year-end holidays). Consultation center: Mon–Fri 9:00–16:00 (closed 2nd & 4th Wed, Dec 29–Jan 3)"
     languages: ["Japanese", "English", "Chinese", "Spanish", "Portuguese", "Tagalog", "Vietnamese", "Indonesian", "Nepali (Mon)", "Thai (Tue)", "Myanmar (Thu)"]
     languages_note: "Phone/video interpreting available for other languages."
     phone: "03-3202-5535"
@@ -269,8 +269,8 @@ edogawa:
     address: "Tower Hall Funabori 3F, 4-1-1 Funabori, Edogawa-ku, Tokyo 134-0091"
     hours: "Tue–Sat 10:00–16:30 (closed Sun, Mon, public holidays, year-end)"
     languages: ["Japanese", "English", "Chinese", "Korean", "Portuguese", "Spanish", "Vietnamese", "Tagalog", "Nepali", "Thai"]
-    languages_note: "Additional languages may be available by telephone interpretation on weekdays."
-    phone: "03-3877-3851"
+    languages_note: "Tue–Fri only: Indonesian, Russian, Hindi and French as well. Phone consultation connects to an interpreting call center."
+    phone: "03-3877-3841"
     url: "https://www.city.edogawa.tokyo.jp/foreign/tabunkakyousei.html"
   garbage_guide_url: "https://www.city.edogawa.tokyo.jp/documents/6073/bumbetsupamphlet-e.pdf"
   garbage_guide_label: "How to Sort and Dispose of Recyclables and Garbage (PDF, English)"
@@ -311,7 +311,7 @@ adachi:
   official_en_note: "Adachi has no authored-English website. This is the ward's official multilingual gateway (machine translation into 100+ languages, plus Easy Japanese)."
   foreign_desk:
     name_en: "Foreign Residents Consultation Desk (Multicultural Coexistence Section)"
-    name_local: "外国人相談窓口（地域調整課多文化共生係）"
+    name_local: "外国人相談窓口（地域調整課多文化共生担当）"
     address: "Adachi Ward Office South Building 3F, 1-17-1 Chuo-honcho, Adachi-ku, Tokyo 120-8510"
     hours: "Mon–Fri 9:30–12:00 and 13:00–16:00 (closed public holidays)"
     languages: ["English", "Chinese", "Korean"]
@@ -427,8 +427,8 @@ meguro:
     name_local: "外国人相談窓口（目黒区総合庁舎本館1階）"
     address: "Main Building 1F, Meguro City Office, 2-19-15 Kamimeguro, Meguro-ku, Tokyo"
     hours: "English: Mon–Fri 9:00–12:00 and 13:00–17:00; Chinese: Mon–Fri 10:00–12:00 and 13:00–17:00"
-    languages: ["English", "Chinese", "Korean", "Filipino/Tagalog"]
-    languages_note: "English and Chinese staffed daily; Korean and Filipino via the Meguro International Friendship Association (MIFA)."
+    languages: ["English", "Chinese"]
+    languages_note: "English: 03-5722-9187; Chinese: 03-5722-9194."
     phone: "03-5722-9187"
     url: "https://mifa.jp/en/for-internationals/foreign-informationdesk/"
   garbage_guide_url: "https://www.city.meguro.tokyo.jp/documents/4396/r8-pamphlet-english.pdf"
@@ -454,8 +454,8 @@ nerima:
     languages: ["English", "Chinese", "Korean", "Tagalog"]
     phone: "03-5984-4333"
     url: "https://www.city.nerima.tokyo.jp/kurashi/kokusai/gaikokugosoudan.html"
-  garbage_guide_url: "https://www.city.nerima.tokyo.jp/kurashi/gomi/recycle/downloads.files/R7English.pdf"
-  garbage_guide_label: "How to Separate and Dispose of Recyclable Resources and Waste (PDF, English)"
+  garbage_guide_url: "https://www.city.nerima.tokyo.jp/kurashi/gomi/recycle/downloads.files/2026_e.pdf"
+  garbage_guide_label: "How to Separate and Dispose of Recyclable Resources and Waste — Simplified Version, October 2026 (PDF, English)"
   garbage_guide_page_url: "https://www.city.nerima.tokyo.jp/kurashi/gomi/recycle/downloads.html"
   office_address: "6-12-1 Toyotama-kita, Nerima-ku, Tokyo 176-8501"
   office_phone: "03-3993-1111"
@@ -525,8 +525,8 @@ setagaya:
     languages_note: "In person: English Mon–Fri, Chinese Mon/Tue/Thu. Video or phone interpretation available in about 20 more languages."
     phone: "03-5432-2892"
     url: "https://www.city.setagaya.lg.jp/02408/3643.html"
-  garbage_guide_url: "https://www.city.setagaya.lg.jp/documents/3634/e4.pdf"
-  garbage_guide_label: "Life in Setagaya 2025 — Recyclable Resources and Garbage (PDF, English)"
+  garbage_guide_url: "https://www.city.setagaya.lg.jp/documents/3634/setagaya_en_4.pdf"
+  garbage_guide_label: "Life in Setagaya — Living in Setagaya chapter, including Garbage Disposal (PDF, English)"
   garbage_guide_page_url: "https://www.city.setagaya.lg.jp/02408/3634.html"
   office_address: "4-21-27 Setagaya, Setagaya-ku, Tokyo 154-8504"
   office_phone: "03-5432-1111"
