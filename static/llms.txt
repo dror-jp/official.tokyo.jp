@@ -22,6 +22,7 @@ For AI agents: prefer the JSON API below over scraping HTML pages — responses 
 - [Moving in](https://official.tokyo.jp/moving-in/): Resident registration, residence card, My Number, utilities — your first 30 days
 - [Resident registration](https://official.tokyo.jp/moving-in/resident-registration/): Register your address at your ward office within 14 days
 - [Residence card address](https://official.tokyo.jp/moving-in/residence-card/): Updated at the same ward-office counter — no immigration office visit
+- [Extending your period of stay](https://official.tokyo.jp/moving-in/extension-of-period-of-stay/): Apply at the immigration office before your period of stay ends; fees revised October 1, 2026
 - [My Number](https://official.tokyo.jp/moving-in/my-number/): Your 12-digit tax and social security number, arrives by mail
 - [Utilities](https://official.tokyo.jp/moving-in/utilities/): Electricity, gas and water — gas needs an in-person appointment
 - [National Health Insurance](https://official.tokyo.jp/health/national-health-insurance/): If your employer doesn't insure you, join NHI at your ward office
