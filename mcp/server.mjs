@@ -171,7 +171,7 @@ rl.on("line", async (line) => {
       reply(id, {
         protocolVersion: params?.protocolVersion ?? "2025-06-18",
         capabilities: { tools: {} },
-        serverInfo: { name: "official-tokyo", version: "1.0.0" },
+        serverInfo: { name: "official-tokyo", version: "1.0.1" },
         instructions:
           "Verified data on official procedures in Tokyo for foreign residents. " + DISCLAIMER,
       });

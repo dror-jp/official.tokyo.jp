@@ -1,0 +1,24 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.dror-jp/official-tokyo-mcp",
+  "title": "official.tokyo.jp",
+  "description": "Human-verified guide to official procedures in Tokyo for foreign residents. Not a government site.",
+  "repository": {
+    "url": "https://github.com/dror-jp/official.tokyo.jp",
+    "source": "github",
+    "subfolder": "mcp"
+  },
+  "websiteUrl": "https://official.tokyo.jp/data/",
+  "version": "1.0.1",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@dror-jp/official-tokyo-mcp",
+      "version": "1.0.1",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
