@@ -10,7 +10,14 @@ official.tokyo.jp is an independent, non-government guide run by
 [DroR Corporation](https://dror.co.jp); if anything differs from an official page,
 the official page is correct.
 
-## Setup
+## Remote (no install)
+
+Streamable HTTP endpoint, no authentication: `https://mcp.official.tokyo.jp/mcp`
+
+Add it as a custom connector in Claude (Settings → Connectors) or any MCP client that
+supports remote servers. Same tools and data as the npm package below.
+
+## Setup (local, npm)
 
 Requires Node.js 18+.
 

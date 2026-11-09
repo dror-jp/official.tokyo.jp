@@ -6,3 +6,4 @@ resources/
 internal/
 CLAUDE.local.md
 .claude/
+.wrangler/
