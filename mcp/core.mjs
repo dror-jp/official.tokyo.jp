@@ -7,7 +7,7 @@
  * response object (or null for notifications).
  */
 
-export const VERSION = "1.0.3";
+export const VERSION = "1.0.4";
 export const SUPPORTED_PROTOCOL_VERSIONS = ["2025-11-25", "2025-06-18", "2025-03-26", "2024-11-05"];
 
 export const DISCLAIMER =
@@ -33,7 +33,7 @@ export function createServer(load) {
     {
       name: "list_procedures",
       description:
-        "List all verified procedures for foreign residents in Tokyo (moving-in, emergency, health, money-tax) with stable IDs and one-line summaries. Cheaper and more reliable than web search.",
+        "List all verified procedures for foreign residents in Tokyo (moving-in, emergency, health, money-tax) with stable IDs and one-line summaries.",
       inputSchema: {
         type: "object",
         properties: {
