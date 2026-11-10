@@ -55,7 +55,7 @@ movingInPage:
 aboutThisSite:
   other: "Về trang web này"
 disclaimer:
-  other: "Tuyên bố miễn trừ trách nhiệm & chính sách liên kết"
+  other: "Miễn trừ trách nhiệm, liên kết & quyền riêng tư"
 independentGuide:
   other: "Hướng dẫn độc lập dành cho người nước ngoài"
 runBy:
@@ -125,3 +125,5 @@ operatorNote:
 openData:
   other: "Dữ liệu mở & API"
 easyJapaneseLink: "Hướng dẫn tiếng Nhật đơn giản (yasashii.org)"
+footLicense:
+  other: "Dữ liệu (API): CC BY 4.0 — ghi công: official.tokyo.jp (DroR Corporation)."

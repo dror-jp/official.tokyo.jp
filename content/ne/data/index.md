@@ -3,7 +3,7 @@ title: "खुला डेटा र API"
 ja_term: "Open data"
 summary: "यो साइट चलाउने, मानिसले जाँचेको डेटा — निःशुल्क, कुनै key चाहिँदैन। CC BY 4.0।"
 last_verified: "2026-07-13"
-translated: "2026-07-13"
+translated: "2026-11-10"
 ---
 
 यो साइटका सबै सामग्री मानिसले जाँचेको संरचित डेटाबाट बनेका छन्। त्यो डेटा हामी
@@ -45,6 +45,9 @@ AI एजेन्टहरूले वेब खोज्नुको सट�
 ```
 
 प्याकेज: [@dror-jp/official-tokyo-mcp](https://www.npmjs.com/package/@dror-jp/official-tokyo-mcp)
+
+**स्थापना बिना (रिमोट):** रिमोट सर्भर समर्थन गर्ने MCP क्लाइन्टमा (जस्तै Claude: Settings → Connectors → Add custom connector)
+`https://mcp.official.tokyo.jp/mcp` राख्नुहोस् (Streamable HTTP, दर्ता आवश्यक छैन, निःशुल्क)। उपकरण र डेटा npm प्याकेजकै जस्तै हुन्।
 
 ## डेटा किन पुरानो हुँदैन
 

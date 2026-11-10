@@ -4,6 +4,7 @@
 # If anything here differs from an official page, the official page is correct.
 # License: CC BY 4.0 — attribution: official.tokyo.jp (DroR Corporation)
 # Generated: {{ now.Format "2006-01-02" }} (built from the same source as the HTML site — never hand-synced)
+# Remote MCP server: https://mcp.official.tokyo.jp/mcp (Streamable HTTP, no auth) | npm: @dror-jp/official-tokyo-mcp
 # JSON API: {{ "api/procedures.json" | absURL }} | {{ "api/wards.json" | absURL }} | {{ "api/glossary.json" | absURL }} | {{ "api/emergency.json" | absURL }}
 
 {{ range partial "api-procedures.html" . }}

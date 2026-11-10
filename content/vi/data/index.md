@@ -3,7 +3,7 @@ title: "Dữ liệu mở & API"
 ja_term: "Open data"
 summary: "Dữ liệu đã được con người kiểm chứng — miễn phí, không cần khóa. CC BY 4.0."
 last_verified: "2026-07-13"
-translated: "2026-07-13"
+translated: "2026-11-10"
 ---
 
 Toàn bộ nội dung trang web này được xây dựng từ dữ liệu có cấu trúc, do con người
@@ -45,6 +45,10 @@ Các AI agent có thể gọi dữ liệu này như công cụ, thay vì tìm ki
 ```
 
 Gói: [@dror-jp/official-tokyo-mcp](https://www.npmjs.com/package/@dror-jp/official-tokyo-mcp)
+
+**Không cần cài đặt (từ xa):** trong ứng dụng MCP hỗ trợ máy chủ từ xa (ví dụ Claude: Cài đặt → Trình kết nối →
+Thêm trình kết nối tùy chỉnh), nhập `https://mcp.official.tokyo.jp/mcp` (Streamable HTTP, không cần đăng ký, miễn phí).
+Công cụ và dữ liệu giống gói npm.
 
 ## Vì sao dữ liệu không bao giờ lỗi thời
 

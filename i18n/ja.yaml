@@ -54,7 +54,7 @@ movingInPage:
 aboutThisSite:
   other: "このサイトについて"
 disclaimer:
-  other: "免責（めんせき）とリンクの決まり"
+  other: "免責（めんせき）・リンク・プライバシー"
 independentGuide:
   other: "外国人のための 独立した案内サイト"
 runBy:
@@ -123,3 +123,5 @@ aiTranslated:
 openData:
   other: "オープンデータとAPI"
 easyJapaneseLink: "やさしい日本語の 案内 (yasashii.org)"
+footLicense:
+  other: "データ（API）は CC BY 4.0 です。出典: official.tokyo.jp (DroR Corporation)"

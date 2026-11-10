@@ -3,7 +3,7 @@ title: "开放数据与API"
 ja_term: "Open data"
 summary: "驱动本网站的人工核实数据，任何人都可以免费使用。无需密钥。CC BY 4.0。"
 last_verified: "2026-07-13"
-translated: "2026-07-13"
+translated: "2026-11-10"
 ---
 
 本网站的内容全部来自人工核实的结构化数据。我们将这些数据公开，供应用程序、研究者、
@@ -44,6 +44,9 @@ AI代理可以直接调用这些数据，而不必搜索网页:
 ```
 
 软件包: [@dror-jp/official-tokyo-mcp](https://www.npmjs.com/package/@dror-jp/official-tokyo-mcp)
+
+**无需安装（远程）：** 在支持远程服务器的 MCP 客户端中（例如 Claude 的「设置 → 连接器 → 添加自定义连接器」）
+填入 `https://mcp.official.tokyo.jp/mcp` 即可使用（Streamable HTTP，无需注册，免费）。工具和数据与 npm 软件包相同。
 
 ## 数据为何不会过时
 

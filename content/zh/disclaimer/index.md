@@ -1,8 +1,8 @@
 ---
-title: "免责声明与链接政策"
+title: "免责声明、链接与隐私"
 summary: "本网站承诺提供什么，不承诺什么。"
 last_verified: "2026-07-10"
-translated: "2026-07-10"
+translated: "2026-11-10"
 ---
 
 ## 免责声明
@@ -26,3 +26,19 @@ translated: "2026-07-10"
 
 本网站上的各区结构化数据（[/api/wards.json](/api/wards.json)）依据 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 协议开放使用。
 署名方式：*official.tokyo.jp（DroR株式会社）*。
+
+## 隐私 {#privacy}
+
+- **无广告，无跟踪。** 本网站没有广告，没有分析或跟踪脚本，也不使用 Cookie。
+- **您选择的区。** 选择区后，该选择只保存在您自己的浏览器中（localStorage），以便下次显示。不会发送给我们。
+- **网站传送。** 本网站由 Cloudflare 提供传送服务。在传送页面的过程中，Cloudflare 会处理您的 IP 地址等连接信息
+  （[Cloudflare 隐私政策](https://www.cloudflare.com/privacypolicy/)）。
+- **面向 AI 工具的 MCP 服务器**（`https://mcp.official.tokyo.jp/mcp`）：
+  - 您的 IP 地址仅用于统计每分钟的请求次数，以防止过度使用。
+  - Cloudflare 会保存每次请求的记录（时间、URL 以及 IP 地址等连接信息），**最长 7 天**。我们仅将其用于确认服务正常运行和阻止滥用。
+  - 我们的程序不会把请求内容（您的问题或工具参数）写入日志。没有账户，也不使用 Cookie。
+- **npm 软件包。** `npx -y @dror-jp/official-tokyo-mcp` 在您自己的电脑上运行，只会下载本网站的公开数据文件。
+- **联系我们时。** 发送到 [fix@official.tokyo.jp](mailto:fix@official.tokyo.jp) 的邮件仅用于确认您的报告，并在可能时回复。
+  GitHub 上的 issue 按照 GitHub 的条款公开。
+- 我们不会出售个人信息，也不会将其提供给任何人。
+- 运营方：DroR株式会社（[dror.co.jp](https://dror.co.jp)）。

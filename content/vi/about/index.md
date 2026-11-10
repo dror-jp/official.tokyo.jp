@@ -2,7 +2,7 @@
 title: "Về trang web này"
 summary: "Ai vận hành official.tokyo.jp, và vì sao."
 last_verified: "2026-07-10"
-translated: "2026-07-10"
+translated: "2026-11-10"
 ---
 
 ## Chúng tôi không phải là cơ quan chính phủ
@@ -72,3 +72,6 @@ cần đến chính là mục đích của trang web này.
 
 Nếu có bất kỳ điều gì trên trang web này khác với trang chính thức, trang chính thức
 mới là đúng.
+
+Tài liệu bằng tiếng Nhật dễ hiểu (*yasashii nihongo*) về thủ tục và phòng chống thiên tai trên toàn Nhật Bản có tại
+trang web chị em [yasashii.org](https://yasashii.org/).
