@@ -1,6 +1,6 @@
 {
   "name": "@dror-jp/official-tokyo-mcp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "mcpName": "io.github.dror-jp/official-tokyo-mcp",
   "description": "MCP server for official.tokyo.jp — human-verified data on official procedures in Tokyo for foreign residents (resident registration, health insurance, wards, emergencies). Independent project, not a government service. Data CC BY 4.0.",
   "type": "module",
