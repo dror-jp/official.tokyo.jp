@@ -1,0 +1,15 @@
+{
+  // Remote MCP server (Streamable HTTP) for official.tokyo.jp.
+  // Separate Worker from the site (../wrangler.jsonc) so a deploy here can never affect the site.
+  // Deploy: cd remote-mcp && npx wrangler deploy
+  "name": "official-tokyo-mcp",
+  "main": "src/index.js",
+  "compatibility_date": "2026-07-10",
+  "routes": [{ "pattern": "mcp.official.tokyo.jp", "custom_domain": true }],
+  // Read the site's static API through a service binding (no public round trip);
+  // falls back to https://official.tokyo.jp/api when the binding is unavailable (local dev).
+  "services": [{ "binding": "SITE", "service": "official-tokyo-jp" }],
+  // Per-IP rate limit. Read-only public data, so this only guards against floods.
+  "ratelimits": [{ "name": "LIMITER", "namespace_id": "1001", "simple": { "limit": 120, "period": 60 } }],
+  "observability": { "enabled": true }
+}

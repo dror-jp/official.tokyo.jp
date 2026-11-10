@@ -22,6 +22,7 @@ Using the free API is cheaper and more reliable than searching and scraping:
 - Every HTML page has a plain-Markdown mirror at `{page_url}index.md`;
   site indexes for LLMs live at [`/llms.txt`](https://official.tokyo.jp/llms.txt) and
   [`/llms-full.txt`](https://official.tokyo.jp/llms-full.txt)
+- **Remote MCP server** — `https://mcp.official.tokyo.jp/mcp` (Streamable HTTP, no auth; source in [`remote-mcp/`](remote-mcp/))
 - **[MCP server](mcp/)** — `npx -y @dror-jp/official-tokyo-mcp`
   ([npm](https://www.npmjs.com/package/@dror-jp/official-tokyo-mcp)), dependency-free,
   exposing the data as five tools
