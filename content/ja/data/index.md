@@ -44,6 +44,10 @@ AIエージェントは、Webを検索するかわりに、このデータを直
 
 パッケージ: [@dror-jp/official-tokyo-mcp](https://www.npmjs.com/package/@dror-jp/official-tokyo-mcp)
 
+**インストールなしで使う（リモート）:** リモートのサーバーに対応した MCP クライアント（Claude の
+「設定 → コネクタ → カスタムコネクタを追加」など）に `https://mcp.official.tokyo.jp/mcp` を入れるだけで使えます
+（Streamable HTTP・登録なし・無料）。ツールとデータは npm のパッケージと同じです。
+
 ## データが古くならない理由
 
 JSONも Markdown版も HTMLページも、ぜんぶ **同じ原稿から** 自動で作られます。

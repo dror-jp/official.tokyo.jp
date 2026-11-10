@@ -64,3 +64,6 @@ toll-free, in about 15 languages. Pointing you to the right official place is ex
 what this site is for.
 
 If anything on this site differs from an official page, the official page is correct.
+
+For documents in Easy Japanese (*yasashii nihongo*) on procedures and disaster preparedness across Japan,
+see our sister site [yasashii.org](https://yasashii.org/).

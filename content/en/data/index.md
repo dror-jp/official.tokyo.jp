@@ -49,6 +49,10 @@ AI agents can call this data as tools instead of searching the web:
 Package: [@dror-jp/official-tokyo-mcp](https://www.npmjs.com/package/@dror-jp/official-tokyo-mcp) —
 dependency-free, five tools (procedures, wards, glossary, emergency contacts).
 
+**Remote (no install):** connect any MCP client that supports remote servers — including Claude
+(Settings → Connectors → Add custom connector) — to `https://mcp.official.tokyo.jp/mcp`
+(Streamable HTTP, no sign-up, free). Same tools and data as the npm package.
+
 ## Why it never goes stale
 
 The JSON, the Markdown mirrors and the HTML pages are all generated **from the same

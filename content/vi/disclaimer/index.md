@@ -1,8 +1,8 @@
 ---
-title: "Tuyên bố miễn trừ trách nhiệm & chính sách liên kết"
+title: "Miễn trừ trách nhiệm, liên kết & quyền riêng tư"
 summary: "Trang web này cam kết làm gì và không cam kết làm gì."
 last_verified: "2026-07-10"
-translated: "2026-07-10"
+translated: "2026-11-10"
 ---
 
 ## Tuyên bố miễn trừ trách nhiệm
@@ -44,3 +44,20 @@ Dữ liệu có cấu trúc về các quận trên trang web này
 ([/api/wards.json](/api/wards.json)) được cung cấp theo giấy phép
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 Ghi công: *official.tokyo.jp (DroR Corporation)*.
+
+## Quyền riêng tư {#privacy}
+
+- **Không quảng cáo, không theo dõi.** Trang web này không có quảng cáo, không có mã phân tích hay theo dõi, và không dùng cookie.
+- **Quận bạn chọn.** Khi bạn chọn quận, lựa chọn chỉ được lưu trong trình duyệt của bạn (localStorage) để hiển thị lần sau. Không được gửi cho chúng tôi.
+- **Phân phối.** Trang web được phân phối bởi Cloudflare. Khi gửi trang đến bạn, Cloudflare xử lý thông tin kết nối
+  như địa chỉ IP ([chính sách quyền riêng tư của Cloudflare](https://www.cloudflare.com/privacypolicy/)).
+- **Máy chủ MCP cho công cụ AI** (`https://mcp.official.tokyo.jp/mcp`):
+  - Địa chỉ IP của bạn chỉ được dùng để đếm số yêu cầu mỗi phút, nhằm tránh dùng quá mức.
+  - Cloudflare lưu nhật ký của mỗi yêu cầu (thời gian, URL và thông tin kết nối như địa chỉ IP) **tối đa 7 ngày**.
+    Chúng tôi chỉ dùng để kiểm tra dịch vụ hoạt động và ngăn chặn lạm dụng.
+  - Chương trình của chúng tôi không ghi nội dung yêu cầu (câu hỏi hoặc tham số công cụ) vào nhật ký. Không có tài khoản, không có cookie.
+- **Gói npm.** `npx -y @dror-jp/official-tokyo-mcp` chạy trên máy tính của bạn và chỉ tải các tệp dữ liệu công khai của trang này.
+- **Khi bạn liên hệ.** Email gửi đến [fix@official.tokyo.jp](mailto:fix@official.tokyo.jp) chỉ được dùng để kiểm tra báo cáo
+  và trả lời khi có thể. Issue trên GitHub được công khai theo điều khoản của GitHub.
+- Chúng tôi không bán hoặc chia sẻ thông tin cá nhân với bất kỳ ai.
+- Đơn vị vận hành: DroR Corporation ([dror.co.jp](https://dror.co.jp)).

@@ -55,7 +55,7 @@ movingInPage:
 aboutThisSite:
   other: "यो साइटको बारेमा"
 disclaimer:
-  other: "अस्वीकरण र लिङ्क नीति"
+  other: "अस्वीकरण, लिङ्क र गोपनीयता"
 independentGuide:
   other: "विदेशी बासिन्दाहरूका लागि स्वतन्त्र गाइड"
 runBy:
@@ -125,3 +125,5 @@ operatorNote:
 openData:
   other: "खुला डेटा र API"
 easyJapaneseLink: "सरल जापानी गाइड (yasashii.org)"
+footLicense:
+  other: "डेटा (API): CC BY 4.0 — श्रेय: official.tokyo.jp (DroR Corporation)।"

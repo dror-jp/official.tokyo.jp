@@ -1,5 +1,5 @@
 ---
-title: "免責とリンクの決まり"
+title: "免責・リンク・プライバシー"
 summary: "このサイトが 約束すること・しないこと。"
 last_verified: "2026-07-10"
 ---
@@ -33,3 +33,22 @@ last_verified: "2026-07-10"
 このサイトの区データ（[/api/wards.json](/api/wards.json)）は、
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)で だれでも使えます。
 出典: *official.tokyo.jp (DroR Corporation)*
+
+## プライバシー {#privacy}
+
+- **広告なし・追跡なし。** このサイトには 広告も、アクセス解析や追跡のための プログラムも、Cookie も ありません。
+- **区のえらび方の保存。** 区をえらぶと、その区は あなたのブラウザの中（localStorage）だけに 保存され、次に来たとき 表示されます。わたしたちには 送られません。
+- **配信について。** このサイトは Cloudflare という会社が 配信しています。ページを 届けるとき、Cloudflare は
+  IPアドレスなどの 通信の情報を あつかいます（[Cloudflare のプライバシーポリシー](https://www.cloudflare.com/privacypolicy/)）。
+- **AI向けの MCPサーバー**（`https://mcp.official.tokyo.jp/mcp`）:
+  - 使いすぎを防ぐため、IPアドレスを 1分あたりの回数を数えることだけに 使います。
+  - Cloudflare が、それぞれの通信の記録（時刻・URL・IPアドレスなどの 通信の情報）を **最長7日** 保存します。
+    サービスが動いているかの確認と、不正な利用を止めることだけに 使います。
+  - 送られた質問の中身（ツールに渡した内容）を、わたしたちのプログラムは 記録に書きません。
+    アカウントも Cookie も ありません。
+- **npm のパッケージ。** `npx -y @dror-jp/official-tokyo-mcp` は あなたのパソコンで動き、このサイトの
+  公開データを ダウンロードするだけです。
+- **連絡をくれたとき。** [fix@official.tokyo.jp](mailto:fix@official.tokyo.jp) へのメールは、内容の確認と
+  返信のためだけに 使います。GitHub の issue は、GitHub の決まりに したがって 公開されます。
+- 個人の情報を 売ったり、ほかの人に 渡したりは しません。
+- 運営: 株式会社DroR（[dror.co.jp](https://dror.co.jp)）

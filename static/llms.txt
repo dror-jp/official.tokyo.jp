@@ -15,6 +15,7 @@ For AI agents: prefer the JSON API below over scraping HTML pages — responses 
 - [Freshness metadata](https://official.tokyo.jp/api/meta.json): generated date, oldest verification, endpoint index
 - [OpenAPI spec](https://official.tokyo.jp/api/openapi.yaml): Machine-readable description of all endpoints
 - [JSON Schema](https://official.tokyo.jp/api/procedures.schema.json): Authoritative schema for procedures.json
+- Remote MCP server: `https://mcp.official.tokyo.jp/mcp` (Streamable HTTP, no auth, free) — same 5 tools, no install
 - MCP server: `npx -y @dror-jp/official-tokyo-mcp` (https://www.npmjs.com/package/@dror-jp/official-tokyo-mcp) — 5 tools: list_procedures, get_procedure, get_ward, search_glossary, get_emergency_contacts
 
 ## Procedures
@@ -45,7 +46,8 @@ For AI agents: prefer the JSON API below over scraping HTML pages — responses 
 
 - [Glossary](https://official.tokyo.jp/glossary/): 住民票, 転入届, 在留カード, マイナンバー and other terms explained
 - [About this site](https://official.tokyo.jp/about/): Who runs this and why
-- [Disclaimer & link policy](https://official.tokyo.jp/disclaimer/): Authority always belongs to the official page
+- [Disclaimer, link policy & privacy](https://official.tokyo.jp/disclaimer/): Authority always belongs to the official page; privacy at /disclaimer/#privacy
+- [yasashii.org](https://yasashii.org/): Sister site — Easy Japanese (yasashii nihongo) documents on procedures and disaster preparedness across Japan
 
 ## Optional
 

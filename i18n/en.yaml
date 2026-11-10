@@ -55,7 +55,7 @@ movingInPage:
 aboutThisSite:
   other: "About this site"
 disclaimer:
-  other: "Disclaimer & link policy"
+  other: "Disclaimer, links & privacy"
 independentGuide:
   other: "Independent guide for foreign residents"
 runBy:
@@ -124,3 +124,5 @@ aiTranslated:
 openData:
   other: "Open data & API"
 easyJapaneseLink: "Easy Japanese guides (yasashii.org)"
+footLicense:
+  other: "Data (API): CC BY 4.0 — attribution: official.tokyo.jp (DroR Corporation)."
